@@ -7,7 +7,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     color:#383B37;
-    
 }
 
 .header1{
@@ -16,42 +15,35 @@ body{
     height: 80px;
     left: 0px;
     top: 0px;
-
     background: #383B37;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    
 }
 
 .header1 .frame {
     display: flex;
     flex-direction: row;
     padding: 0px;
-
     position: absolute;
     width: 816px;
-    height: 23px;
+    height: 80px;
     left: 540px;
-    top: 29.23px;
-    
 }
 
 .header1 .frame .menu-item{
     color:white;
     position: static;
-    height: 23px;
+    height: 20px;
     text-decoration: none;
     font-family: Arial;
     font-weight: bold;
     font-size: 16px;
     line-height: 23px;
-    
-    text-align: center;
+    align-self: center;
 }
+
 .header1 .frame .menu-item:hover{
     color:#85B2FF;
 }
-
-
 
 .header1 .frame #home {
     left: 0%;
@@ -59,30 +51,22 @@ body{
     top: calc(50% - 23px/2);
     margin: 0px 20px;
 }
-.header1 .frame #divider1{
-    left: 13.36%;
-    right: 86.52%;
-    top: 6.52%;
-    bottom: 6.52%;
 
-}
 .header1 .frame #about{
-    
-    height: 23px;
     left: 15.93%;
     right: 71.08%;
-    top: calc(50% - 23px/2);
+    top: 30px;
     margin: 0px 20px;
 }
+
 .header1 .frame #products{
-    height: 23px;
     left: 33.95%;
     right: 53.31%;
     top: calc(50% - 23px/2);
     margin: 0px 20px;
 }
+
 .header1 .frame #services{
-    height: 23px;
     left: 51.72%;
     right: 35.54%;
     top: calc(50% - 23px/2);
@@ -90,20 +74,18 @@ body{
 }
 
 .header1 .frame #blog{
-    height: 23px;
     left: 69.49%;
     right: 17.77%;
     top: calc(50% - 23px/2);
     margin: 0px 20px;
 }
+
 .header1 .frame #contact {
-    height: 23px;
     left: 87.25%;
     right: 0%;
     top: calc(50% - 23px/2);
     margin: 0px 20px;
 }
-
 
 .header1 .frame .menu-divider{
     background: #000000;
@@ -111,29 +93,27 @@ body{
     height: 20px;
     flex: none;
     align-self: center;
-    margin: 20px 0px;
-    position: static;
+    margin: 0px 0px;
+    padding: 0px;
 }
 
 /*dropdown*/
-/*///////////////////////////////////////////////*/
-#dropdown-container{
-    display:none;
+.dropdown-container{
+    display: none;
 }
-.header1:hover #dropdown-container{
+
+#products:hover .dropdown-container{
+    display:block;
     
-    display: block;
-
 }
-
 
 .header1 .dropdown{
     list-style-type:none;
     position: absolute;
     width: 223px;
     height: 130px;
-    left: 700px;
-    top: 80px;
+    left: 170px;
+    margin-top:26px;
     background: #1E201D;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -145,56 +125,46 @@ body{
     font-weight: bold;
     font-size: 16px;
     line-height: 23px;
+    text-align: left;
     height: 23px;
     color: white;
+    border-bottom: white 1px solid;
+}
+
+.dropdown > .dropdown-item:hover {
+    color:#85B2FF;
 }
 
 .header1 .dropdown #product1{
-    left: 36px;
+    left: 39px;
     right: 10.18px;
     top:10px;
-
+    width: 142px;   
 }
 
-#product1:hover,
-#product2:hover,
-#product3:hover {
-    color:#85B2FF;
-    
-
-}
 .header1 .dropdown #product2 {
     left:36px;
     right: 14.24px;
     top: 50px ;
+    width: 142px;
 }
+
 .header1 .dropdown #product3{
     left: 36px;
     right: 10.27px;
     top: 90px;
+    width: 142px;
+    border-bottom: none;
 }
 
-.header1 .dropdown .dropdown-divider{
-    width:162.18;
-    height: 1px;
-    color: white;
-    position: relative;
-
-}
 .dropdown .dropdown-divider #drdiv1{
     top:39px;
 }
 
-   
 .dropdown .dropdown-divider #drdiv2
 {
    top:79px;
 }
-
-
-
-
-/*////////////////////////////////////////////*/
 /*end of dropdown*/
 /*content*/
 h4{
@@ -202,13 +172,13 @@ h4{
     font-size: 20px;
     line-height: 25px;
 }
+
 p{
-  
-    
     font-weight: normal;
     font-size: 16px;
     line-height: 23px;
 }
+
 button{
     font-size: 16px;
     line-height: 23px;
@@ -216,15 +186,12 @@ button{
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #FFFFFF;
-
-
     padding: 18px 36px;
     background: #575756;
     box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
     border-radius: 30px;
     outline: none;
     cursor:pointer;
-
     border:0;
 }
 
@@ -233,10 +200,8 @@ button{
     grid-template-columns: 1fr 1fr 1fr; 
     max-width: 1400px;
     margin: 60px auto auto auto;
-    
     row-gap: 40px;
     column-gap: 40px;
-    
     padding:40px 0;
 }
 
@@ -244,7 +209,6 @@ button{
     background: #FFFFFF;
     border: 2px solid #E5E5E5;
     padding:20px;
-
     display: flex;
     flex-direction: column
 }
@@ -259,19 +223,16 @@ button{
 .container .box > img {
     height: 250px;
     width: 100%;
-    
     object-fit: cover;
     margin-bottom: 11px;
 }
 
 .container .box h4 {
     margin-bottom: 10px;
-
 }
 
 .container .box p {
     margin-bottom: 20px;
-
 }
 .container .box > button {
     margin: 0 auto;

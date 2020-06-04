@@ -1,9 +1,9 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Zadatak</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,32 +13,24 @@
                 <div class="menu-divider"></div>
             <a id="about" class="menu-item" href="#">About</a>
                 <div class="menu-divider"></div>
-            <a id="products" class="menu-item" href="#">Products</a>
+            <a id="products" class="menu-item" href="#">Products
+                <div class="dropdown-container">
+                    <ul  class="dropdown">
+                        <li class="dropdown-item" id="product1">Product 1 </li>
+                        <li class="dropdown-item" id="product2">Product 2</li>
+                        <li class="dropdown-item" id="product3">Product 3</li>
+                    </ul>
+                </div>
+            </a>
                 <div class="menu-divider"></div>
             <a id="services" class="menu-item" href="#">Services</a>
                 <div class="menu-divider"></div>
             <a id="blog" class="menu-item" href="#">Blog</a>
                 <div class="menu-divider"></div>
             <a id="contact" class="menu-item" href="#">Contact</a>
-
-
-        </div>
-        <div id="dropdown-container">
-        <ul  class="dropdown">
-            <li class="dropdown-item" id="product1">Product 1</li>
-            
-                <div class="dropdown-divider" id="drdiv1"></div>
-            
-                
-            <li class="dropdown-item" id="product2">Product 2</li>
-                
-                <div class="dropdown-divider" id="drdiv2"></div>
-            
-                
-            <li class="dropdown-item" id="product3">Product 3</li>
-        </ul>
         </div>
     </header>
+    
     <div class="container">
         <div class="box">
             <img src="img/1.png" alt="box_image">
