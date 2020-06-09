@@ -3,7 +3,6 @@
     margin: 0;
     padding:0;
 }
-
 body{
     font-family: Arial, Helvetica, sans-serif;
     color:#383B37;
@@ -11,7 +10,6 @@ body{
 ul, li{
     list-style-type:none;
 }
-
 .header1{
     position: absolute;
     width: 1920px;
@@ -21,13 +19,11 @@ ul, li{
     background: #383B37;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
-
 .header1 {
     padding: 0px;
     position: absolute;
     width: 100%;
     height: 80px;
-   
 }
 .menu-list{
     display: flex;
@@ -36,10 +32,8 @@ ul, li{
     position: absolute;
     left:35%;
 }
-
 .menu-item-container{
     height: 80px;
-    
 }
 .menu-item{
     margin-top: 29px;
@@ -56,12 +50,9 @@ ul, li{
     display: block;
     padding: 0px 20px;
 }
-
 .header1 .menu-list .menu-item:hover{
     color:#85B2FF;
 }
-
-
 .header1 .menu-divider{
     background: #000000;
     width:1px;
@@ -71,16 +62,13 @@ ul, li{
     margin: 0px 0px;
     padding: 0px;
 }
-
 /*dropdown*/
 .dropdown-container{
     display: none;
 }
-
 .dropdown-trigger:hover .dropdown-container{
     display:block;   
 }
-
 .header1 .dropdown{
     position: absolute;
     width: 223px;
@@ -91,11 +79,7 @@ ul, li{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    
 }
-
-
-
 .header1 .dropdown .dropdown-item{
     position: absolute;
     font-family: Arial;
@@ -108,25 +92,21 @@ ul, li{
     color: white;
     border-bottom: white 1px solid;
 }
-
 .dropdown > .dropdown-item:hover {
     color:#85B2FF;
 }
-
 .header1 .dropdown #product1{
    left: 39px;
     right: 10.18px;
     top:10px;
     width: 142px;   
 }
-
 .header1 .dropdown #product2 {
     left:36px;
     right: 14.24px;
     top: 50px ;
     width: 142px;
 }
-
 .header1 .dropdown #product3{
     left: 36px;
     right: 10.27px;
@@ -134,8 +114,6 @@ ul, li{
     width: 142px; 
     border-bottom: none;
 }
-
-
 /*end of dropdown*/
 /*content*/
 h4{
@@ -143,13 +121,11 @@ h4{
     font-size: 20px;
     line-height: 25px;
 }
-
 p{
     font-weight: normal;
     font-size: 16px;
     line-height: 23px;
 }
-
 button{
     font-size: 16px;
     line-height: 23px;
@@ -165,7 +141,6 @@ button{
     cursor:pointer;
     border:0;
 }
-
 .container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
@@ -175,7 +150,6 @@ button{
     column-gap: 40px;
     padding:40px 0;
 }
-
 .container .box{
     background: #FFFFFF;
     border: 2px solid #E5E5E5;
@@ -183,25 +157,21 @@ button{
     display: flex;
     flex-direction: column
 }
-
 .container .box:hover, 
 .container .box:focus{
     cursor:pointer;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.46s ease-in-out;
 }
-
 .container .box > img {
     height: 250px;
     width: 100%;
     object-fit: cover;
     margin-bottom: 11px;
 }
-
 .container .box h4 {
     margin-bottom: 10px;
 }
-
 .container .box p {
     margin-bottom: 20px;
 }
