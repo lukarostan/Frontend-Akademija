@@ -24,7 +24,6 @@
     "last 3 iOS versions"
   ],
   "dependencies": {
-    "colors": "^1.4.0",
     "npm": "^6.1.0",
     "update": "^0.7.4",
     "webpack": "^4.12.0"
