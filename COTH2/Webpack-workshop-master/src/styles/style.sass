@@ -8,6 +8,7 @@
     text-decoration: none
 body
     background-color: #dae3f2
+    
 .posterama
     font-family: posterama, sans-serif
 
@@ -23,13 +24,22 @@ body
         width: 22px
         height: 22px
         margin: 30px 10px 29px 30px
+        transition: -webkit-box-shadow 0.2s
+    .logo:hover
+        cursor: pointer
+        -webkit-box-shadow: 0px 0px 21px -2px #04a
     h1
         font-size: 16px
         margin-top: 1.9rem
         color: black
-        a:visited
-            color: black
-        
+        height: fit-content
+    
+    h1:hover
+        text-decoration: underline
+        cursor: pointer
+
+    button:hover
+        -webkit-box-shadow: 0px 0px 21px -2px rgba(227,28,121,0.71)
     button
         background-color: #E31C79
         height: 60px
@@ -41,15 +51,23 @@ body
         margin-top: 10px
         right: 10px
         align-content: center
+        transition: visibility 0.3s
+        transition: -webkit-box-shadow 0.2s
+        
         img
             width: 14px
             margin-left: 14px
+    
+
+
 .main-container
     display: flex //flex
     flex-direction: column
     align-items: center
     width: 100%
     height: 54rem
+    transition: display 1s
+    z-index: -22
     h2
         display: inline-block
         font-size: 25px
@@ -59,41 +77,67 @@ body
         width: 39rem
         height: 7rem
         border-radius: 100px
-        z-index: -1
         background-color: #BBC7D6
         position: absolute
         top: 25rem
-        
         align-items: center
+        .hero-button:hover
+            cursor: pointer
         .hero-button
             background-color: #003DA7
             border-radius: 50%
             height: 100px
             width: 100px
             margin: 6px
-            z-index: 1
+            justify-content: center
+            z-index: 2
+            transition: height 0.5s, width 0.5s, transform 0.5s
+            img
+                margin: 40px 0px 0px 40px
         .prev
             float: left
+            opacity: 0%
+        
+
+        .prev:hover img
+            transition: transform 0.5s
+            transform: translateX(-10px)
+                
         .next
             float: right
+    
+    
     .hero-container
+        z-index: 1
+        transition: opacity 0.3s, transform 2s 
+    
+    .hero-card
         background-color: white
         margin-top:3.9rem
         width: 25rem
         height: 27rem
         box-shadow: 0px 10px 40px rgba(26, 26, 26, 0.4)
-        display: flex
+        display: none
         flex-direction: column
         align-items: center
-        
+        z-index: 2
+        transition: opacity 0.3s, transform 2s 
+
         img
             width: 350px
             height: 320px
             object-fit: cover
             margin-top: 30px
+            
         p
             font-size: 20px
             margin-top: 30px
+            
+
+    .hero-card:nth-child(1)
+        display: flex
+        
+
     .hidden-card
         height: 5px
         background-color: white
@@ -110,6 +154,7 @@ body
         margin-top: 3.8rem
         text-decoration: underline
         text-decoration-color: #BBC7D6
+        transition: font-size 0.5s
     .hero-row
         display: flex
         flex-direction: row
@@ -117,9 +162,10 @@ body
         width: fit-content
         height: 60px
         margin-top: 3.8rem
-        
+
         img
             width: 60px
+            height: 60px
             margin: 0 5px
             overflow: hidden
             border-radius: 50%    
@@ -130,7 +176,7 @@ body
     align-items: center
     width: 100%
     height: 52.1rem
-    
+    transition: display 1s 
     img
         border-radius: 50%
         width: 6.5rem
@@ -140,16 +186,45 @@ body
         flex-direction: column
         img 
             margin:60px 50px
+            width: 100px
+            height: 100px
     .scnd-clmn
         display: flex
         flex-direction: column
         img
             margin: 128px 87px
+            width: 60px
+            height: 60px
     .last-row
         display: flex
         flex-direction: row
+        justify-content: center
         img
             margin: 0px 50px
+            width: 60px
+            height: 60px
+        .winner
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: absolute
+            top:11rem
+            font-size: 16px
+            p
+                margin-bottom:10px
+                font-weight: 900
+            div
+                width: 100px
+                height: 100px   
+                border-radius: 50%
+                border: 1px dashed #BBC7D6
+                display: flex
+                justify-content: center
+                img
+                    margin-top: 40px
+                    width: 24px
+                    height: 20px
+                    
 
         
 
