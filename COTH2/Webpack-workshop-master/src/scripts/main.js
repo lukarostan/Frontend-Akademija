@@ -177,10 +177,10 @@ function battle(i1, i2){
 }, 1500);
  */
 
-$(".hero-card p").text(heroes)
 
 
-$(".hero1").attr("src",)
+
+$(".hero1").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/17.jpg")
 $(".hero2").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/757.jpg")
 $(".hero3").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/717.jpg")
 $(".hero4").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/7.jpg")
