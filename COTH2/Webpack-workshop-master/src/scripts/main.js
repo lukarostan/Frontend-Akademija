@@ -12,6 +12,9 @@ import './parts/jQuery';
 import './pages/user-page';
 
 
+
+var heroN = 1;
+var heroSelected = 1;
 $(".logo").click(function(){
     window.location ="http://www.factory.hr";
 })
@@ -20,6 +23,9 @@ $(".button").click(function(){
     $(".button").css("visibility","hidden");
     $(".main-container").css("display","none");
     $(".tournament-container").css("display", "flex");
+    heroSelected = heroN;
+    /* $(".tournament-container .hero1").attr("src",heroes[heroSelected].image.url);  */
+    
 })
 
 $(".header h1").click(function(){
@@ -28,10 +34,19 @@ $(".header h1").click(function(){
     $(".tournament-container").css("display", "none");
 })
 
-var heroN = 1;
+
 
 console.log(heroN);
 
+const updateSelection = () => {
+    $(".hero-card").css("display","none")
+    $(".hero-card:nth-child("+heroN+")").css("display","flex")
+    updateRow();
+}
+
+const updateRow = () =>{
+    $(".hero-row:nth-child("+ heroN+")").css("filter","grayscale(0%)")
+}
 
 
 $(".hero-button").click(function(){
@@ -96,10 +111,11 @@ $(".random").on("mouseup",function(){
 
 $(".random").click(function(){
     
-    $(".hero-card").css("display","none")
+    
     heroN= Math.floor(Math.random() * (10 - 1) + 1);
     console.log("random "+heroN);
-    $(".hero-card:nth-child("+heroN+")").css("display","flex")
+    updateSelection();
+    
     
 })
 
@@ -107,48 +123,42 @@ $(".random").click(function(){
 
 const { get } = require("jquery");
 var heroes = new Array;
-const sendRequest = (method, url) => {
-    let req = new XMLHttpRequest();
-    req.open(method, url);
-    req.responseType = 'json';
-    req.send();
-    req.onload =  function() {
-        heroes.push(req.response);
-    }
-    return heroes;
-}
 
- const getHeroes = () => { 
-    for(let i=0; i<8;i++){
+
+function getHeroes(){
+    for(let i=0; i<10 ;i++){ 
         var id = Math.floor(Math.random()*733);
-         sendRequest('get','https://superheroapi.com/api/2983210371755036/'+id);
-    }
+        $.getJSON("https://superheroapi.com/api/2983210371755036/"+ id , (data, status) => {
+             
+                heroes.push(data);
+              
+        })
+            .done(function(data){
+                let j = 1
+                $(".hero"+(j+i)).attr("src",data.image.url);
+                $(".hero"+(j+i)).attr("alt",data.name);
+                $(".hero"+(j+i)+"-name").text(data.name);
+                
+            })
+            
+    } 
 }
-setTimeout(function() { getHeroes();
-console.log(heroes);}, 500);
+getHeroes();
+console.log(heroes);
 
+function round(i1, i2){
+    const powerstats = ["combat","durability","intelligence","power","speed","strength"]
+    
 
-function battle(i1, i2){
-    if((heroes[i1].powerstats.strength + heroes[i1].powerstats.intelligence) > (heroes[i2].powerstats.strength + heroes[i1].powerstats.intelligence)){
-        heroes[i1].score=1;
-        heroes[i2].score=0;
-    }else if((heroes[i1].powerstats.strength + heroes[i1].powerstats.intelligence) < (heroes[i2].powerstats.strength + heroes[i1].powerstats.intelligence)){
-        heroes[i2].score=1;
-        heroes[i1].score=0;
-    }else{
-        heroes[i1].score=0;
-        heroes[i2].score=0;
-    }
-    console.log(heroes[i1].name  +' - '+heroes[i2].name +'  '+heroes[i1].score+  ' : '+ heroes[i2].score);
 }
 
 /* setTimeout(function tournament () {
 
     console.log("%c ****Četvrtfinale****","color:#1976d2;");
-        battle(0,1);
-        battle(2,3);
-        battle(4,5);
-        battle(6,7);
+        round(0,1);
+        round(2,3);
+        round(4,5);
+        round(6,7);
         
     console.log("%c ****Polufinale****","color:#1976d2;");
         
@@ -157,13 +167,13 @@ function battle(i1, i2){
         }
         heroes = heroes.filter(removeLosers);
         
-        battle(0,1);
-        battle(2,3);
+        round(0,1);
+        round(2,3);
     
     console.log("%c ****Finale****","color:#1976d2;");
         heroes = heroes.filter(removeLosers);
             
-        battle(0,1);
+        round(0,1);
         
         heroes = heroes.filter(removeLosers);
         if(heroes[0] == undefined){
@@ -175,18 +185,52 @@ function battle(i1, i2){
         }
         alert(heroes[0].name+" is winner!")
 }, 1500);
- */
+  */
 
 
 
 
-$(".hero1").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/17.jpg")
-$(".hero2").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/757.jpg")
-$(".hero3").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/717.jpg")
-$(".hero4").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/7.jpg")
-$(".hero5").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/57.jpg")
-$(".hero6").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/77.jpg")
-$(".hero7").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/3.jpg")
-$(".hero8").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/1.jpg")
-$(".hero9").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/77.jpg")
-$(".hero10").attr("src","https://www.superherodb.com/pictures2/portraits/10/100/77.jpg") 
+
+
+
+$(".hero-row .hero1").click(function(){
+    heroN = 1;
+    updateSelection();
+})
+$(".hero-row .hero2").click(function(){
+    heroN = 2;
+    updateSelection();
+})
+$(".hero-row .hero3").click(function(){
+    heroN = 3;
+    updateSelection();
+})
+$(".hero-row .hero4").click(function(){
+    heroN = 4;
+    updateSelection();
+})
+$(".hero-row .hero5").click(function(){
+    heroN = 5;
+    updateSelection();
+})
+$(".hero-row .hero6").click(function(){
+    heroN = 6;
+    updateSelection();
+})
+$(".hero-row .hero7").click(function(){
+    heroN = 7;
+    updateSelection();
+})
+$(".hero-row .hero8").click(function(){
+    heroN = 8;
+    updateSelection();
+})
+$(".hero-row .hero9").click(function(){
+    heroN = 9;
+    updateSelection();
+})
+$(".hero-row .hero10").click(function(){
+    heroN = 10;
+    updateSelection();
+})
+

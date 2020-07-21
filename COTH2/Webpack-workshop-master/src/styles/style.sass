@@ -8,6 +8,9 @@
     text-decoration: none
 body
     background-color: #dae3f2
+
+img
+    object-fit: cover
     
 .posterama
     font-family: posterama, sans-serif
@@ -155,6 +158,14 @@ body
         text-decoration: underline
         text-decoration-color: #BBC7D6
         transition: font-size 0.5s
+    
+    .hero-row *:hover 
+        filter: grayscale(0)
+        cursor: pointer
+        width: 90px
+        height: 90px
+        box-shadow: 4px 4px 92px -12px rgba(82,79,82,0.66)
+    
     .hero-row
         display: flex
         flex-direction: row
@@ -164,11 +175,13 @@ body
         margin-top: 3.8rem
 
         img
+            filter: grayscale(98%)
             width: 60px
             height: 60px
             margin: 0 5px
             overflow: hidden
             border-radius: 50%    
+            transition: filter 0.19s, width 0.19s ease-out, height 0.19s ease-out, box-shadow 0.19s
 
 
 .tournament-container
@@ -245,10 +258,6 @@ body
         display: flex
         flex-direction: row
         justify-content: center
-        img
-            margin: 0px 50px
-            width: 60px
-            height: 60px
 
         .battle-winner-container
             display: flex
@@ -308,13 +317,32 @@ body
 
     
     .final-winner
-            display: flex
-            flex-direction: column
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: absolute
+        top:11rem
+        font-size: 16px
+
+        .final-bracket
+            margin-top: 5rem
+            width: 12.7rem
+            height: 4rem
+            border: 1.7px solid #BBC7D6
+            border-bottom: none
+            
+            div
+                height: 4rem
+                width: 2px
+                background-color: #bbc7d6
+                margin: -4rem 50% 0 50% 
+                
+
+        .battle-winner-container
             align-items: center
-            position: absolute
-            top:11rem
-            font-size: 16px
+            justify-content: center
             p
+                text-align: center
                 margin-bottom:10px
                 font-weight: 900
             div
@@ -324,10 +352,11 @@ body
                 border: 1.7px dashed #BBC7D6
                 display: flex
                 justify-content: center
-                img
-                    margin-top: 40px
-                    width: 24px
-                    height: 20px
+            img
+                margin-top: 40px
+                width: 24px
+                height: 20px
+        
                     
 
         
