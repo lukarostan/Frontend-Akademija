@@ -14,7 +14,9 @@ import './pages/user-page';
 
 
 var heroN = 1;
-var heroSelected = 1;
+var heroUser = 1;
+var tournamentHeroes = new Array;
+
 $(".logo").click(function(){
     window.location ="http://www.factory.hr";
 })
@@ -23,10 +25,30 @@ $(".button").click(function(){
     $(".button").css("visibility","hidden");
     $(".main-container").css("display","none");
     $(".tournament-container").css("display", "flex");
-    heroSelected = heroN;
-    /* $(".tournament-container .hero1").attr("src",heroes[heroSelected].image.url);  */
     
+    fillTounament();
 })
+
+function selectHeroes(){
+    tournamentHeroes = [];
+    heroUser = heroN;
+    tournamentHeroes[0] = heroes[heroUser];
+    for(let i=0;i<7;i++){
+        var j = Math.floor(Math.random() * (10 - 1) + 1);
+        tournamentHeroes.push(heroes[j]);
+    }
+    console.log(tournamentHeroes);
+    return tournamentHeroes;
+}
+
+function fillTounament(){
+    selectHeroes();
+    for(let i = 1;i<9;i++){
+        $(".tournament-container .hero"+(i+1)).attr("src",tournamentHeroes[i].image.url);
+    }
+}
+
+
 
 $(".header h1").click(function(){
     $(".button").css("visibility","visible");
