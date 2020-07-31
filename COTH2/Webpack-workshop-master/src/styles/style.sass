@@ -94,17 +94,14 @@ img
             margin: 6px
             justify-content: center
             z-index: 2
-            transition: height 0.5s, width 0.5s, transform 0.5s
+            transition: height 0.5s, width 0.5s, transform 0.5s, background 0.35s
             img
                 margin: 40px 0px 0px 40px
         .prev
             float: left
-            opacity: 0%
+            pointer-events: none
+            background: rgba(43, 43, 43, 0.09)
         
-
-        .prev:hover img
-            transition: transform 0.5s
-            transform: translateX(-10px)
                 
         .next
             float: right
@@ -235,6 +232,8 @@ img
             flex-direction: row
             align-items: center
             justify-content: center
+            img
+                transition: width 0.5s, height 0.5s
             
             .bracket    
                 width: 4rem
@@ -257,6 +256,7 @@ img
                     width: 5.5rem
                     background-color: #BBC7D6
                     
+                    
 
     .last-row
         display: flex
@@ -278,6 +278,8 @@ img
                     width: 2px
                     height: 50px
                     background-color: #BBC7D6
+                    img
+                        transition: width 0.5s, height 0.5s
 
             .bracket    
                 margin: 0 1rem 0 -5rem
@@ -317,6 +319,7 @@ img
                     margin-top: 20px
                     width: 24px
                     height: 20px
+                    
 
 
     
@@ -340,6 +343,8 @@ img
                 width: 2px
                 background-color: #bbc7d6
                 margin: -4rem 50% 0 50% 
+                img
+                    transition: width 0.5s, height 0.5s
                 
 
         .battle-winner-container

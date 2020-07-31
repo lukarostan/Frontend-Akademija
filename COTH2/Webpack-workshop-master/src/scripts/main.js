@@ -63,24 +63,32 @@ $(".hero-button").click(function(){
     $(".hero-card:nth-child("+ (heroN -1)  +")").css("display","none")
 })
 
-/* $(".prev").on("mousedown",function(){
-    $(".prev img").css("transform","rotate(180deg) translateX(10px)");
-    
+
+$(".hero-button").on("mousedown",function(){
+    $(".hero-button ").css({"background":"#0062ca"});
 })
-$(".prev").on("mouseup",function(){
-    $("prev img").css("transform","rotate(180deg) translateX(0px)");
-    
-}) */
+$(".hero-button").on("mouseup",function(){
+    $(".hero-button ").css({"background":"#003DA7"});
+})
 
 
-$(".prev").click(function(){
+$(".prev").mousedown(function(){
     if(heroN>=1 && heroN<=10){
         heroN -= 1;
         $(".hero-card:nth-child("+heroN+")").css("display","flex")
         $(".hero-card:nth-child("+ (heroN +1)  +")").css("display","none")
     }
-    /* $(".hero-card:nth-child("+(heroN+1)+")").animate({transform:"translateY(200px)"},"1000ms");
-    $(".hero-card:nth-child("+(heroN)+")").animate({transform:"translateY(200px)"},"1000ms"); */
+    if(heroN == 1){
+        $(".prev").css({"pointer-events":"none","background":"rgba(43, 43, 43, 0.09)"});
+    }else{
+        $(".prev").css("pointer-events","auto");
+        $(".next").css({"pointer-events":"auto","background":"#003DA7"});
+    }
+    $(".hero-container:nth-child("+(heroN+1)+")").animate({transform:"translateY(200px)"},"1000ms");
+    $(".hero-container:nth-child("+(heroN)+")").animate({transform:"translateY(200px)"},"1000ms"); 
+    
+    
+    
     console.log(heroN);
     if(heroN <= 1 ){
         heroN = 1;
@@ -88,14 +96,21 @@ $(".prev").click(function(){
     
 })
 
-$(".next").click(function(){
+$(".next").mousedown(function(){
     if(heroN>=1 && heroN<=10){
         heroN += 1;
         $(".hero-card:nth-child("+heroN+")").css("display","flex")
         $(".hero-card:nth-child("+ (heroN -1)  +")").css("display","none")
     }
-    /* $(".hero-card:nth-child("+(heroN+1)+")").animate({transform:"translateY(200px)"},"1000ms");
-    $(".hero-card:nth-child("+(heroN)+")").animate({transform:"translateY(200px)"},"1000ms"); */
+    if(heroN == 10){
+        $(".next").css({"pointer-events":"none","background": "rgba(43, 43, 43, 0.09)"});
+        
+    }else{
+        $(".prev").css({"pointer-events":"auto","background":"#003DA7"});
+        $(".next").css("pointer-events","auto");
+    }
+    $(".hero-container:nth-child(1)").animate({transform:"translateY(200px)"},"1000ms");
+    $(".hero-container:nth-child(2)").animate({transform:"translateY(200px)"},"1000ms"); 
     console.log(heroN);
     if(heroN >= 10 ){
         heroN = 10;
@@ -222,6 +237,7 @@ function selectHeroes(){
     tournamentIDs.length = 7;
     tournamentIDs.unshift(heroUser); 
     console.log("tournamentIDs: "+tournamentIDs);
+    tournamentIDs.filter((item, index)=> tournamentIDs.indexOf(item) !== index);
     return tournamentIDs;
 }
 
@@ -231,28 +247,33 @@ function selectHeroes(){
 async function fillTournament(){
     
     await selectHeroes();
+    
     for(let i = 0;i<8;i++){
         $(".tournament-container .hero"+(i)).attr("src",heroes[tournamentIDs[i]].image.url); 
         $(".tournament-container .hero"+(i)).attr("title",heroes[tournamentIDs[i]].name); 
         /* console.log(heroes[tournamentIDs[i]]); */
     }
-    battle(0,1)
+    
+        battle(tournamentIDs[0],tournamentIDs[1])
+        battle(tournamentIDs[2],tournamentIDs[3])
+        battle(tournamentIDs[4],tournamentIDs[5])
+        battle(tournamentIDs[6],tournamentIDs[7])
 }
 
 function round(i1, i2){
     let stat1 = 0;
     let stat2 = 0;
-    stat1 = powerstats[Math.floor(Math.random() * (5 - 0) + 0)]
-    stat2 = powerstats[Math.floor(Math.random() * (5 - 0) + 0)]
+    stat1 = powerstats[Math.floor(Math.random() * (5)) ]
+    stat2 = powerstats[Math.floor(Math.random() * (5) )]
     while(stat1 == stat2){
         stat2 = powerstats[Math.floor(Math.random() * (5 - 0) + 0)];
     }
     if(( heroes[i1].powerstats[stat1] + heroes[i1].powerstats[stat2]) > (heroes[i2].powerstats[stat1] + heroes[i2].powerstats[stat2])){
-        console.log("prvi")
+        
         return true; //prvi je pobijedio
 
     }else if (( heroes[i1].powerstats[stat1] + heroes[i1].powerstats[stat2]) < (heroes[i2].powerstats[stat1] + heroes[i2].powerstats[stat2])){
-        console.log("drugi")
+        
         return false; //drugi je pobijedio
     }
 }
@@ -271,13 +292,60 @@ function battle(i1,i2){
     }
     
     if(heroes1score > heroes2score){
-        winners.push(heroes[i1]);
+        winners.push(i1);
+        heroes[i1].qfinal = true;
     }else if (heroes1score < heroes2score){
-        winners.push(heroes[i2]);
+        winners.push(i2);
+        heroes[i2].qfinal = true;
     }
     console.log(winners);
-    console.log(heroes1score +":"+ heroes2score);
+    
+    (heroes1score +":"+ heroes2score);
+
 }
+
+/* function checkQFinal(){
+    var quarterFinalists = new Array;
+    for(let i=0;i<10;i++){
+        if(heroes[i].qfinal){
+            quarterFinalists.push(heroes[i]);
+        }
+    }
+    console.log(quarterFinalists);
+} */
+
+
+setTimeout(function updateData(){ 
+    for(let i=0;i<4;i++){
+        $(".winner"+(i+1)).attr("src",heroes[winners[i]].image.url);
+        $(".winner"+(i+1)).css({"width":"60px","height":"60px","margin":"0"});
+        
+   }
+   
+    setTimeout(function semiFinal(){
+        /* checkQFinal(); */
+        battle(winners[0],winners[1]);
+        battle(winners[2],winners[3]); 
+         
+        console.log(winners)
+
+        $(".winner5").attr("src",heroes[winners[4]].image.url);
+        $(".winner6").attr("src",heroes[winners[5]].image.url);
+        $(".winner5").css({"width":"60px","height":"60px","margin":"0"});
+        $(".winner6").css({"width":"60px","height":"60px","margin":"0"});
+
+        setTimeout(function(){ 
+            battle(winners[4],winners[5]);
+
+            $(".winnerfinal").attr("src",heroes[winners[6]].image.url);
+            $(".winnerfinal").css({"width":"100px","height":"100px","margin":"0"});
+        }, 3000);
+
+
+    }, 3000);
+
+
+ }, 5000);
 
 
 
