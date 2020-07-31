@@ -162,9 +162,11 @@ img
     .hero-row *:hover 
         filter: grayscale(0)
         cursor: pointer
+        opacity: 100%
         width: 90px
         height: 90px
         box-shadow: 4px 4px 92px -12px rgba(82,79,82,0.66)
+        
     
     .hero-row
         display: flex
@@ -173,15 +175,17 @@ img
         width: fit-content
         height: 60px
         margin-top: 3.8rem
+        
 
         img
             filter: grayscale(98%)
             width: 60px
+            opacity: 50%
             height: 60px
             margin: 0 5px
             overflow: hidden
             border-radius: 50%    
-            transition: filter 0.19s, width 0.19s ease-out, height 0.19s ease-out, box-shadow 0.19s
+            transition: filter 0.19s, width 0.19s ease-out, height 0.19s ease-out, box-shadow 0.19s, opacity 0.19s
 
 
 .tournament-container
@@ -326,7 +330,7 @@ img
 
         .final-bracket
             margin-top: 5rem
-            width: 12.7rem
+            width: 12rem
             height: 4rem
             border: 1.7px solid #BBC7D6
             border-bottom: none
