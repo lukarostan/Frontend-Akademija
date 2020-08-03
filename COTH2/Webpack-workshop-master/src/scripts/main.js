@@ -11,7 +11,7 @@ import './parts/jQuery';
 // Example Pages
 import './pages/user-page';
 
-
+const { get } = require("jquery");
 //##########INTERFACE#########//
 
 $(".logo").click(function(){
@@ -27,8 +27,6 @@ $(".button").click(function(){
     fillTournament();
     
 })
-
-
 
 $(".header h1").click(function(){
     $(".button").css("visibility","visible");
@@ -58,8 +56,6 @@ $(".hero-button").click(function(){
     if(heroN > 9){
         $(".next").css("opacity","0%")
     }else{$(".next").css("opacity","100%")}
-    
-    
     $(".hero-card:nth-child("+ (heroN -1)  +")").css("display","none")
 })
 
@@ -71,47 +67,55 @@ $(".hero-button").on("mouseup",function(){
     $(".hero-button ").css({"background":"#003DA7"});
 })
 
+function hidePrev(){
+    $(".prev").css({"pointer-events":"none","background":"rgba(43, 43, 43, 0.09)"});
+}
+function showPrev(){
+    $(".prev").css("pointer-events","auto");
+    $(".next").css({"pointer-events":"auto","background":"#003DA7"});
+}
 
 $(".prev").mousedown(function(){
     if(heroN>=1 && heroN<=10){
         heroN -= 1;
-        $(".hero-card:nth-child("+heroN+")").css("display","flex")
-        $(".hero-card:nth-child("+ (heroN +1)  +")").css("display","none")
+        updateSelection();
     }
     if(heroN == 1){
-        $(".prev").css({"pointer-events":"none","background":"rgba(43, 43, 43, 0.09)"});
+        hidePrev();
     }else{
-        $(".prev").css("pointer-events","auto");
-        $(".next").css({"pointer-events":"auto","background":"#003DA7"});
+       showPrev();
     }
-    $(".hero-container:nth-child("+(heroN+1)+")").animate({transform:"translateY(200px)"},"1000ms");
-    $(".hero-container:nth-child("+(heroN)+")").animate({transform:"translateY(200px)"},"1000ms"); 
+    checkRow();
+    clearRow();
     
-    
-    
-    console.log(heroN);
     if(heroN <= 1 ){
         heroN = 1;
     }
     
 })
 
+function hideNext(){
+    $(".next").css({"pointer-events":"none","background": "rgba(43, 43, 43, 0.09)"});
+}
+
+function showNext(){
+    $(".prev").css({"pointer-events":"auto","background":"#003DA7"});
+    $(".next").css("pointer-events","auto");
+}
+
 $(".next").mousedown(function(){
     if(heroN>=1 && heroN<=10){
         heroN += 1;
-        $(".hero-card:nth-child("+heroN+")").css("display","flex")
-        $(".hero-card:nth-child("+ (heroN -1)  +")").css("display","none")
+        updateSelection();
     }
     if(heroN == 10){
-        $(".next").css({"pointer-events":"none","background": "rgba(43, 43, 43, 0.09)"});
-        
+        hideNext();
     }else{
-        $(".prev").css({"pointer-events":"auto","background":"#003DA7"});
-        $(".next").css("pointer-events","auto");
+        showNext();
     }
-    $(".hero-container:nth-child(1)").animate({transform:"translateY(200px)"},"1000ms");
-    $(".hero-container:nth-child(2)").animate({transform:"translateY(200px)"},"1000ms"); 
-    console.log(heroN);
+    checkRow();
+    clearRow();
+    
     if(heroN >= 10 ){
         heroN = 10;
     }
@@ -125,55 +129,123 @@ $(".random").on("mouseup",function(){
     $(".random").css("font-size","16px");
 })
 
-$(".random").click(function(){
+$(".random").on("mousedown",(function(){
     heroN= Math.floor(Math.random() * (10 - 1) + 1);
     console.log("random "+heroN);
     updateSelection();
-    
-})
+    checkRow();
+    clearRow();
+    if(heroN == 1){
+        hidePrev();
+    }
+    if(heroN == 10){
+        hideNext();
+    }
+    else{
+        showPrev();
+        showNext();
+    }
+}))
 
 
 
 $(".hero-row .hero1").click(function(){
     heroN = 1;
     updateSelection();
+    checkRow();
+    clearRow();
+    hidePrev();
+    
 })
+
 $(".hero-row .hero2").click(function(){
     heroN = 2;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero3").click(function(){
     heroN = 3;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero4").click(function(){
     heroN = 4;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero5").click(function(){
     heroN = 5;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero6").click(function(){
     heroN = 6;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero7").click(function(){
     heroN = 7;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero8").click(function(){
     heroN = 8;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero9").click(function(){
     heroN = 9;
     updateSelection();
+    checkRow();
+    clearRow();
+    showPrev();
+    showNext();
 })
 $(".hero-row .hero10").click(function(){
     heroN = 10;
     updateSelection();
-})
+    checkRow();
+    clearRow();
+    hideNext();
+    
+}) 
+
+
+function checkRow(){
+    $(".hero-row .hero"+(heroN)).css({"filter": "grayscale(0)",
+    "opacity": "100%",
+    "width": "90px",
+    "height": "90px",
+    "box-shadow": "4px 4px 92px -12px rgba(82,79,82,0.66)"})
+}
+function clearRow(){
+    $(".hero-row").children().not(".hero-row .hero"+(heroN)).css({ "filter": "grayscale(98%)",
+        "width": "60px",
+        "opacity": "50%",
+        "height": "60px"
+    })
+} 
 
 
 
@@ -181,7 +253,8 @@ $(".hero-row .hero10").click(function(){
 //##########INTERFACE END#########//
 
 //##########BUSSINESS################//
-const { get } = require("jquery");
+
+
 
 var heroes = new Array;
 const powerstats =  ["combat","durability","intelligence","power","speed","strength"]  
@@ -189,15 +262,38 @@ var heroN = 1;
 var heroUser = 1;
 var tournamentIDs = new Array;
 var winners = new Array;
+var results = new Array;
 
+ function fixNull(){
+    
+    console.log("pozvana")
+    for(let i=0;i<10;i++){
+        if(heroes[i].powerstats.combat == null){
+            console.log("null je")
+            heroes[i].powerstats.combat = "0";
+        } if(heroes[i].powerstats.durability == null){
+            heroes[i].powerstats.durability = "0";
+        } if(heroes[i].powerstats.intelligence == null){
+            heroes[i].powerstats.intelligence = "0";
+        } if(heroes[i].powerstats.power == null){
+            heroes[i].powerstats.power = "0";
+        } if(heroes[i].powerstats.speed == null){
+            heroes[i].powerstats.speed = "0";
+        } if(heroes[i].powerstats.strength == null){
+            heroes[i].powerstats.strength = "0";
+        }
+    }
+}
 
 function getHeroes(){
     for(let i=0; i<10 ;i++){ 
         var id = Math.floor(Math.random()*733);
-        $.getJSON("https://superheroapi.com/api/2983210371755036/"+ id , (data, status) => {  
+        $.getJSON("https://superheroapi.com/api/2983210371755036/"+ id , (data, status) => { 
+        
             heroes.push(data);      
         })
             .done(function(data){
+                
                 let j = 1
                 $(".hero"+(j+i)).attr("src",data.image.url);
                 $(".hero"+(j+i)).attr("alt",data.name);
@@ -206,6 +302,9 @@ function getHeroes(){
             })
     } 
 }
+
+
+
 
 let promise = new Promise((resolve,reject) => {
     getHeroes();
@@ -237,7 +336,7 @@ function selectHeroes(){
     tournamentIDs.length = 7;
     tournamentIDs.unshift(heroUser); 
     console.log("tournamentIDs: "+tournamentIDs);
-    tournamentIDs.filter((item, index)=> tournamentIDs.indexOf(item) !== index);
+    
     return tournamentIDs;
 }
 
@@ -254,13 +353,11 @@ async function fillTournament(){
         /* console.log(heroes[tournamentIDs[i]]); */
     }
     
-        battle(tournamentIDs[0],tournamentIDs[1])
-        battle(tournamentIDs[2],tournamentIDs[3])
-        battle(tournamentIDs[4],tournamentIDs[5])
-        battle(tournamentIDs[6],tournamentIDs[7])
+    final();
 }
 
 function round(i1, i2){
+    
     let stat1 = 0;
     let stat2 = 0;
     stat1 = powerstats[Math.floor(Math.random() * (5)) ]
@@ -268,6 +365,7 @@ function round(i1, i2){
     while(stat1 == stat2){
         stat2 = powerstats[Math.floor(Math.random() * (5 - 0) + 0)];
     }
+    
     if(( heroes[i1].powerstats[stat1] + heroes[i1].powerstats[stat2]) > (heroes[i2].powerstats[stat1] + heroes[i2].powerstats[stat2])){
         
         return true; //prvi je pobijedio
@@ -280,17 +378,18 @@ function round(i1, i2){
 
 
 function battle(i1,i2){
-
     var heroes1score = 0;
     var heroes2score = 0;
+
     while(heroes1score <2 && heroes2score <2){
-        if(round(i1,i2)){
+        if( round(i1,i2) ){
             heroes1score += 1
-        }else if (round(i1,i2)==false){
+        }else if ( round(i1,i2) == false){
             heroes2score += 1
         }
+        
     }
-    
+
     if(heroes1score > heroes2score){
         winners.push(i1);
         heroes[i1].qfinal = true;
@@ -299,33 +398,38 @@ function battle(i1,i2){
         heroes[i2].qfinal = true;
     }
     console.log(winners);
-    
-    (heroes1score +":"+ heroes2score);
+    results.push(heroes1score +":"+ heroes2score);
+    console.log(results)
 
 }
 
-/* function checkQFinal(){
-    var quarterFinalists = new Array;
-    for(let i=0;i<10;i++){
-        if(heroes[i].qfinal){
-            quarterFinalists.push(heroes[i]);
-        }
-    }
-    console.log(quarterFinalists);
-} */
 
+function quarterFinal(){
+    battle(tournamentIDs[0],tournamentIDs[1])
+    $(".result1").text(results[0]);
+    battle(tournamentIDs[2],tournamentIDs[3])
+    $(".result2").text(results[1]);
+    battle(tournamentIDs[4],tournamentIDs[5])
+    $(".result3").text(results[2]);
+    battle(tournamentIDs[6],tournamentIDs[7])
+    $(".result4").text(results[3]);
 
-setTimeout(function updateData(){ 
     for(let i=0;i<4;i++){
         $(".winner"+(i+1)).attr("src",heroes[winners[i]].image.url);
-        $(".winner"+(i+1)).css({"width":"60px","height":"60px","margin":"0"});
-        
-   }
+        $(".winner"+(i+1)).css({"width":"60px","height":"60px","margin":"0"});     
+    }
+}
+
+    
    
-    setTimeout(function semiFinal(){
-        /* checkQFinal(); */
+    async function semiFinal(){
+
+        await quarterFinal();
+
         battle(winners[0],winners[1]);
-        battle(winners[2],winners[3]); 
+        $(".result5").text(results[4]);
+        battle(winners[2],winners[3]);
+        $(".result6").text(results[5]); 
          
         console.log(winners)
 
@@ -334,19 +438,15 @@ setTimeout(function updateData(){
         $(".winner5").css({"width":"60px","height":"60px","margin":"0"});
         $(".winner6").css({"width":"60px","height":"60px","margin":"0"});
 
-        setTimeout(function(){ 
-            battle(winners[4],winners[5]);
+    }
+    async function final(){ 
+        await semiFinal();
+        battle(winners[4],winners[5]);
+        $(".result7").text(results[6]); 
 
-            $(".winnerfinal").attr("src",heroes[winners[6]].image.url);
-            $(".winnerfinal").css({"width":"100px","height":"100px","margin":"0"});
-        }, 3000);
-
-
-    }, 3000);
-
-
- }, 5000);
-
+        $(".winnerfinal").attr("src",heroes[winners[6]].image.url);
+        $(".winnerfinal").css({"width":"100px","height":"100px","margin":"0"});
+    }
 
 
 //##########BUSSINESS END################//

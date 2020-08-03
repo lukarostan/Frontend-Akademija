@@ -156,13 +156,13 @@ img
         text-decoration-color: #BBC7D6
         transition: font-size 0.5s
     
-    .hero-row *:hover 
+    /** .hero-row *:hover 
         filter: grayscale(0)
         cursor: pointer
         opacity: 100%
         width: 90px
         height: 90px
-        box-shadow: 4px 4px 92px -12px rgba(82,79,82,0.66)
+        box-shadow: 4px 4px 92px -12px rgba(82,79,82,0.66) **/
         
     
     .hero-row
@@ -172,13 +172,19 @@ img
         width: fit-content
         height: 60px
         margin-top: 3.8rem
-        
+        .hero1
+            filter: grayscale(0)
+            opacity: 100%
+            width: 90px
+            height: 90px
+            box-shadow: 4px 4px 92px -12px rgba(82,79,82,0.66)
 
         img
             filter: grayscale(98%)
             width: 60px
             opacity: 50%
             height: 60px
+            cursor: pointer
             margin: 0 5px
             overflow: hidden
             border-radius: 50%    
@@ -274,12 +280,14 @@ img
                 height: 5rem
                 border-bottom: none
                 margin-bottom: 16rem
-                .div
+                
+                div
                     width: 2px
                     height: 50px
                     background-color: #BBC7D6
                     img
                         transition: width 0.5s, height 0.5s
+                        
 
             .bracket    
                 margin: 0 1rem 0 -5rem
@@ -319,10 +327,8 @@ img
                     margin-top: 20px
                     width: 24px
                     height: 20px
+                    transition: width 0.5s, height 0.5s
                     
-
-
-    
     .final-winner
         display: flex
         flex-direction: column
@@ -337,6 +343,9 @@ img
             height: 4rem
             border: 1.7px solid #BBC7D6
             border-bottom: none
+            p
+                text-align: center
+                margin-top: 0.6rem
             
             div
                 height: 4rem
@@ -365,8 +374,10 @@ img
                 margin-top: 40px
                 width: 24px
                 height: 20px
+                transition: width 0.5s, height 0.5s
         
                     
 
         
 
+ 
