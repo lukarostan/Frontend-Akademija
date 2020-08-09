@@ -1,0 +1,129 @@
+$color: green
+
+*
+    margin: 0
+    padding: 0
+    display: block
+    box-sizing: border-box
+
+body
+    background-image: url("https://picserio.com/data/out/93/1080p-hd-mountain-wallpaper_3139207.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+
+.main-container
+    width: 100vw
+    height:  100vh
+    background-color: rgba(0, 0, 0, 0.35)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    .menu-button
+        position: absolute
+        right: 2.4vw
+        top: 4.8vh
+        z-index: 2
+    .menu-button:hover
+        cursor: pointer
+    .menu-button > div
+        background-color: #fff
+        width: 30px
+        height: 5px
+        margin-bottom:0.65vh
+        border-radius: 25px
+        transition: opacity 0.2s, transform 0.29s
+    h2
+        text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25)
+        color: #fff
+        font-family: 'Playfair Display', serif
+        font-size: 6.2rem
+    p
+        font-family: Arial, Helvetica, sans-serif
+        text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25)
+        color: #fff
+        font-size: 1.9rem
+        line-height: 2rem
+        margin-bottom: 10vh
+
+    
+.sidebar
+    background: rgba(56, 59, 55, 0.95)
+    width: 0
+    height: 100vh
+    right: 0px
+    position: absolute
+    top:0px
+    transition: width 0.39s, background 0.4s
+    
+    .sidebar-container
+        display: none
+        flex-direction: column
+        align-items: center
+        margin-top: 12.2vh
+        #children1
+            display: none
+        #children2
+            display: none
+        .sidebar-item
+            font-size: 1.65vh
+            color: #D3CBCF
+            font-family: Arial, Helvetica, sans-serif
+            font-weight: bold
+            line-height: 2vh
+            border-bottom: 1px solid #1E201D
+            display: flex
+            flex-direction: row
+            transition: background-color 0.3s, border-left 0.13s
+            width: 14vw
+            padding: 1.1vh 0 1.2vh 1.1vw
+            box-shadow: 0px 1px 2px  rgba(0, 0, 0, 0.25)
+            .triangle
+                width: 0
+                height: 0  
+                border-style: solid
+                border-width: 6px 5px 0 5px
+                border-color: #D3CBCF transparent transparent transparent
+                align-self: center
+                position: absolute
+                transform: rotate(360deg)
+                right: 1.5vw
+                transition: transform 0.3s
+            
+            p:hover
+                cursor: pointer
+        .sidebar-item:hover
+            background-color: #1E201D
+            border-left: 2px solid #85B2FF
+       
+        .sidebar-item__child
+            font-size: 1.65vh
+            color: #D3CBCF
+            font-family: Arial, Helvetica, sans-serif
+            font-weight: normal
+            line-height: 2vh
+            border-bottom: 1px solid #1E201D
+            display: flex
+            flex-direction: row
+            transition: background-color 0.3s, border-left 0.13s
+            width: 14vw
+            padding: 1.1vh 0 1.2vh 1.1vw
+            box-shadow: 0px 1px 2px  rgba(0, 0, 0, 0.25)
+            
+            p:hover
+                cursor: pointer
+                font-weight: bold
+        .sidebar-item__child:hover
+            background-color: rgba(30, 32, 29, 0.4)
+
+@media only screen and (max-width: 600px)
+    .main-container
+        p
+            font-size: 14px
+        h2
+            font-size:28px
+        .menu-button
+            right: 20px
+    
+        
+    
