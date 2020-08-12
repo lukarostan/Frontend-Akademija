@@ -15,6 +15,11 @@ var sidebarOpened = false;
 var childOpened = false;
 var sidebarWidth;
 
+$(window).on("load",function(){
+    $("body").css("background-image","url("+ $("#bg").attr("src") +")");
+    
+})
+
 $(".menu-button").on("mousedown",function(){
     
     if(screen.width > 600){
@@ -43,7 +48,6 @@ $(".menu-button").on("mousedown",function(){
         sidebarOpened = true
     }
 
-    console.log(screen.width)
 
 })
 
