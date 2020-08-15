@@ -1,6 +1,6 @@
-# Webpack workshop
+# Website landing page with animated sidebar
 
-Factory app based on webpack 4.
+[Dizajn](https://www.figma.com/file/lY4dSsn4LOBVIFxB5nYN1e/Zadatak-1---2---3---4?node-id=74%3A4)
 
 ```bash
 # Install dependencies
