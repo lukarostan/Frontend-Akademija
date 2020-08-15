@@ -1,62 +1,131 @@
 * {
-    box-sizing: border-box;
-}
-
-body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-header {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-}
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-    list-style-type: none;
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
 }
 
-article {
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 300px; /* only for demonstration, should be removed */
+header {
+    background: #383B37;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 80px;
 }
-
-/* Clear floats after the columns */
-section:after {
-    content: "";
-    display: table;
-    clear: both;
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
-/* Style the footer */
-footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
+.menu a {
+    text-decoration: none;
     color: white;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 20px;
+    border-right: solid 1px black;
+}
+.icons {
+    color: white;
+    float: right;
+}
+.icons i {
+    margin-top: 32px;
+    margin-left: 30px;
+    cursor:pointer;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    font-size: 42px;
+    line-height: 25px;
+    margin-top: 40px;
+    margin-left: 80px;
+}
+.form {
+    margin-left: 300px;
+    display: flex;
+    max-height: 500px;
+    flex-wrap: wrap;
 }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-    nav, article {
-        width: 100%;
-        height: auto;
-    }
+h2 {
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #1D1D1D;
+    margin-top: 20px;
+    margin-left: 300px;
+}
+h3 {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #1D1D1D;
+}
+label {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 16px;
+    line-height: 23px;
+    color: #383B37;
+}
+input {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+    height: 50px;
+    width: 440px;
+}
+input[type='text'] {
+    padding-left: 15px;
+}
+input[type='email'] {
+    padding-left: 15px;
+}
+input[type='number'] {
+    padding-left: 15px;
+}
+input:focus {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px #C4C4C4;
+    outline:none;
+}
+.row {
+    display: flex;
+}
+.column {
+    flex:;
+}
+.educlmn {
+    width:315px;
+    height:50px;
+}
+.finclmn {
+    margin-left: 5px;
+    width: 119px;
+    height: 50px;
+}
+button {
+    color: #85B2FF;
+    border:none;
+    padding: 12px;
+    background: none;
+}
+.savebutton {
+    padding: 18px 36px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: #575756;
+    width: 221px;
+    height: 59px;
+    box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
+    border-radius: 30px;
 }
