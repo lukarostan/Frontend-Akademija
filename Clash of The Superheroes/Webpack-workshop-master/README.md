@@ -1,6 +1,6 @@
-# Webpack workshop
+# Clash of The Heroes
 
-Factory app based on webpack 4.
+Aplikacija povlači podatke o superherojima sa https://superheroapi.com/ i pokreće turnir u kojem se "natjeću" na temelju statsa.
 
 ```bash
 # Install dependencies
