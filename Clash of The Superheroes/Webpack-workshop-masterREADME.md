@@ -2,7 +2,7 @@
 
 Aplikacija povlači podatke o superherojima sa https://superheroapi.com/ i pokreće turnir u kojem se "natjeću" na temelju statsa.
 
-<img src="screenshot1.JPG">
+<img src="screenshot2.JPG">
 
 ```bash
 # Install dependencies
