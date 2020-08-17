@@ -1,8 +1,8 @@
 <template>
-  <div >
+  <div>
     <h1>My Profile</h1>
     <ul >
-      <li><h2><span id="name">Name</span> <span id="surname">Surname</span></h2></li>
+      <li><h2><span id="name">{{firstname}}</span> <span id="surname">Surname</span></h2></li>
       <li><span id="email"><img src="img/mail.png">name.surname@mail.com</span></li>
       <li><span id="phone"><img src="img/tel.png">+385 95 555 8745</span></li>
       <li><label>LOCATION</label></li>
@@ -11,45 +11,36 @@
       <li><label>EDUCATION</label></li>
       <li><label>2003</label><p>High School</p></li>
       <li><label>2008</label><p>Bachelor's Degree</p></li>
-      <li><button id="edit"><img src="src\img\edit.png">EDIT</button></li>
+      <li><button v-if="isEditing" id="edit" @click="isEditing = false"><img src="src\img\edit.png">EDIT</button></li>
     </ul>
   </div>
 </template>
-
-
 <script>
 
-/* const app = new Vue({
-  el: '#app',
-  errors = [],
-  form_sent = false,
-  response_data: [], //srediti
-  data: {
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    country: "",
-    city: "",
-    educations: [
-      {
-        education: "",
-        finished: null,
-      }],
-  },
-  mounted () {
-    axios
-      .post("https://factory.hr/api/test.php", this.data) {
-        emulateJSON: true,
+export default {
+  errors: [],
+  response_data: [],
+  URL: "https://factory.hr/api/test.php",
+  isEditing: false,
+  data: function(){
+        return{
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      country: "",
+      city: "",
+      educations: [
+        {
+          education: "",
+          finished: null,
+        }],
+        }
       }
-      .then(response => (this.response_data = dovršiti ));
-  }
-}
-
+  ,  
   methods: {
-    checkForm: function (e) {
+    checkForm: function (event) {
       this.errors = [];
-
       if (!this.firstname) {
         this.errors.push("Name required.");
       }
@@ -67,22 +58,22 @@
       if (!this.country) {
         this.errors.push("Country required.");
       }
-      if (!this.errors.length) {
-        return true;
-      }
       if (!this.city) {
         this.errors.push("City required.");
       }
       if (!this.educations) {
         this.errors.push("Education required.");
       }
-      e.preventDefault();
+      if (!this.errors.length) {
+        return true;
+      }
+      event.preventDefault();
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    }
-    save() {
+    },
+    save: function() {
       this.data.firstname = this.$refs[firstname].value;
       this.data.lastname = this.$refs[lastname].value;
       this.data.email = this.$refs[email].value;
@@ -91,12 +82,24 @@
       this.data.city = this.$refs[city].value;
       this.data.education = this.$refs[education].value;
       this.data.finished = this.$refs[finished].value;
-      this.isEditing = !this.isEditing; //dodati edit button i =isEditing i arval
+      this.isEditing = !this.isEditing; 
+    },
+    mounted:function() {
+      axios(URL, {
+        method: 'POST',
+        headers: {
+        'content-type': 'application/json',
+      },
+    })
+    .then(response => response.data)
+    .catch(error => {
+      throw (event);
+    });
     }
   }
-}) */
-</script> 
+  }
 
+</script> 
 <style lang="sass" scoped>
 ul
   position: absolute
@@ -108,8 +111,6 @@ ul
     button
       img
         padding: 0px 10px
-
-
 h1
   font-size: 45px
   position: absolute
