@@ -2,11 +2,11 @@
   <div class="container">
     <h1>My Profile</h1>
     <h2>Edit account information</h2>
-    <form>
+    <form autocomplete="off">
       <Personal />
       <Location />
       <Education />
-      <input id="submit-form"  class="submit" type="submit" value="SAVE CHANGES">
+      <input @click="showForm = false, showInfo = true" id="submit-form"  class="submit" type="submit" value="SAVE CHANGES">
     </form>
   </div>
 </template>
@@ -24,18 +24,7 @@ export default {
     Location,
     Education
     
-/* 
-  data(){
-    return{
-    
-    surName: "",
-    eMail:"",
-    phone:"",
-    country:"",
-    city:"",
-    education:"",
 
-    } */
   }
   }
 

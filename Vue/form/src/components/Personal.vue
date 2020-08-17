@@ -39,7 +39,8 @@
         v-model="phone"
         type="tel"
         name="phone"
-        placeholder="Enter Phone Number">
+        placeholder="Enter Phone Number"
+        autocomplete="off">
         </p>               
     </div>
 </template>
@@ -49,13 +50,18 @@
 
 <script>
 export default {
-    props: {
+        props:{
+
+        
         firstname: String,
         surname: String,
         email: String,
         phone: Number,
-
-        
+    },
+    data(){
+        return{
+       
+        }
     }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <Form />
-    <SecondLayout />
+    <Form v-show="showForm"/>
+    <SecondLayout v-show="showInfo"/>
   </div>
 </template>
 
@@ -19,11 +19,15 @@ export default {
     Header,
     SecondLayout
   },
-  methods:{
-    showInfo: function(){
+  data(){
+    return{
+      showForm: true,
+      showInfo: false
 
+      
     }
   }
+  
 }
 </script>
 

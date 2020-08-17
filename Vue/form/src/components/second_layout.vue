@@ -6,8 +6,8 @@
       <li><span id="email"><img src="img/mail.png">name.surname@mail.com</span></li>
       <li><span id="phone"><img src="img/tel.png">+385 95 555 8745</span></li>
       <li><label>LOCATION</label></li>
-      <li>Country: </li>
-      <li>City: </li>
+      <li>Country: <span>Croatia</span></li>
+      <li>City: <span>Zagreb</span></li>
       <li><label>EDUCATION</label></li>
       <li><label>2003</label><p>High School</p></li>
       <li><label>2008</label><p>Bachelor's Degree</p></li>
@@ -18,6 +18,7 @@
 
 
 <script>
+
 /* const app = new Vue({
   el: '#app',
   errors = [],
