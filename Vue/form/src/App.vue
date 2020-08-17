@@ -2,20 +2,27 @@
   <div id="app">
     <Header />
     <Form />
+    <SecondLayout />
   </div>
 </template>
 
 <script>
 
 import Header from "./components/page-header.vue"
-
+import SecondLayout from "./components/second_layout.vue"
 import Form from './components/Form.vue'
 
 export default {
   name: 'App',
   components: {
     Form,
-    Header
+    Header,
+    SecondLayout
+  },
+  methods:{
+    showInfo: function(){
+
+    }
   }
 }
 </script>
