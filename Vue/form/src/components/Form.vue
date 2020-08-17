@@ -1,91 +1,28 @@
 <template>
-  <div class="form">
+  <div class="container">
     <h1>My Profile</h1>
     <h2>Edit account information</h2>
-    <div>
-
-
-    <!-- <form id="app" @submit="checkForm" action="" method="post"> -->
-    <Personal />
-    
-    
-    <h3><b>LOCATION</b></h3>
-    
-    <p>
-    <label for="country">Country</label><br>
-    <input
-    id="country"
-    v-model="country"
-    type="text"
-    name="country"
-    placeholder="Enter Country">
-    </p>
-    
-    <p>
-    <label for="city">City</label><br>
-    <input
-    id="city"
-    v-model="city"
-    type="text"
-    name="city"
-    placeholder="Enter City">
-    
-    </p>
-    </div>
-    <div>
-    <h3>
-    <b>EDUCATION</b>
-    </h3>
-    
-    <p>
-    <label for="education">Education</label><br>
-    <input
-    id="education"
-    v-model="education"
-    type="text"
-    name="education">
-    <br>
-    <br>
-    <input
-    id="education"
-    v-model="education"
-    type="text"
-    name="education">
-    </p>
-    <p>
-    <label for="Finished">Finished</label><br>
-    <input
-    id="finished"
-    v-model="finished"
-    type="number"
-    name="finished"
-    min="1980"
-    max="2020">
-    <br>
-    <br>
-    <input
-    id="finished"
-    v-model="finished"
-    type="number"
-    name="finished"
-    min="1980"
-    max="2020">
-    </p>
-    <button><i class="fas fa-plus-circle"></i>Add</button>
-    </div>
-    <input type="submit" value="SAVE CHANGES">    
-    <!-- </form> -->
-    </div>
+    <form>
+      <Personal />
+      <Location />
+      <Education />
+      <input class="submit" type="submit" value="SAVE CHANGES">
+    </form>
+  </div>
 </template>
 
 <script>
 
 import Personal from "./Personal.vue"
+import Location from "./Location.vue"
+import Education from "./Education.vue"
 
 export default {
   name: 'Form',
   components:{
     Personal,
+    Location,
+    Education
     
 /* 
   data(){
@@ -111,5 +48,21 @@ h1
   position: absolute
   left: 10vw
   top: 12vh
-
+h2
+  font-size: 25px
+  position: absolute
+  left: 23.5vw
+  top: 17.2vh
+form
+  position: absolute
+  left: 23.5vw
+  top: 22.5vh
+.submit
+  background: #575756
+  box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2)
+  border-radius: 30px
+  color: white
+  width: 221px
+  height: 60px
+  border: none
 </style>
