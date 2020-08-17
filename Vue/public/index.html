@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY PROFIL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/6e9ed9d64a.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#services">Services</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <div class="icons">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </header>
+    <div class="section">
+        <h1>My profile</h1>
+        <h2>Edit account information</h2>
+        <div class="form">
+            <form id="app"
+            @submit="checkForm"
+            action=""
+            method="post">
+            <div class="firstsection">
+                <h3 v-if="">
+                <b>PERSONAL</b>
+                </h3>
+        
+                <p>
+                <label for="name">First Name</label><br>
+                <input
+                    id="name"
+                    v-model="name"
+                    type="text"
+                    name="name"
+                    placeholder="First Name">
+                </p>
+        
+                <p>
+                <label for="name">Last Name</label><br>
+                <input
+                    id="name"
+                    v-model="name"
+                    type="text"
+                    name="name"
+                    placeholder="Last Name">
+                </p>
+        
+                <p>
+                <label for="e-mail">E-mail Address</label><br>
+                <input
+                    id="e-mail"
+                    v-model="e-mail"
+                    type="email"
+                    name="e-mail"
+                    placeholder="xxxxx@email.com">
+                </p>
+        
+                <p>
+                <label for="phone">Phone</label><br>
+                <input
+                    id="phone"
+                    v-model="phone"
+                    type="number"
+                    name="phone"
+                    placeholder="Enter Phone Number">
+                </p>               
+            </div>
+            <div class="secondsection">
+                <h3 v-if="">
+                    <b>LOCATION</b>
+                </h3>
+    
+                <p>
+                <label for="country">Country</label><br>
+                <input
+                    id="country"
+                    v-model="country"
+                    type="text"
+                    name="country"
+                    placeholder="Enter Country">
+                </p>
+    
+                <p>
+                <label for="city">City</label><br>
+                <input
+                    id="city"
+                    v-model="city"
+                    type="text"
+                    name="city"
+                    placeholder="Enter City">
+                
+                </p>
+            </div>
+            <div class="thirdsection">
+                <h3 v-if="">
+                    <b>EDUCATION</b>
+                </h3>
+                <div class="row">
+                    <div class="column">
+                        <p>
+                        <label for="education">Education</label><br>
+                        <input class="educlmn"
+                            id="education"
+                            v-model="education"
+                            type="text"
+                            name="education">
+                        <br>
+                        <br>
+                        <input class="educlmn"
+                            id="education"
+                            v-model="education"
+                            type="text"
+                            name="education">
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p>
+                        <label for="Finished">Finished</label><br>
+                        <input  class="finclmn"
+                            id="finished"
+                            v-model="finished"
+                            type="number"
+                            name="finished"
+                            min="1980"
+                            max="2020">
+                        <br>
+                        <br>
+                        <input class="finclmn"
+                            id="finished"
+                            v-model="finished"
+                            type="number"
+                            name="finished"
+                            min="1980"
+                            max="2020">
+                        </p>
+                    </div>
+                <br>
+                <br>
+            </div>
+            <button><i class="fas fa-plus-circle"></i>Add</button>
+            <br>
+            <input class="savebutton"
+                type="submit"
+                value="SAVE CHANGES">
+            </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

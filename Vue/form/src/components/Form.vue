@@ -6,7 +6,7 @@
       <Personal />
       <Location />
       <Education />
-      <input class="submit" type="submit" value="SAVE CHANGES">
+      <input id="submit-form"  class="submit" type="submit" value="SAVE CHANGES">
     </form>
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
   }
   }
 
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -65,4 +66,9 @@ form
   width: 221px
   height: 60px
   border: none
+  position: relative
+  top: -20rem
+  right: -35rem
+.container
+  /** display: none **/
 </style>
