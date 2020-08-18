@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-
+import axios from "axios";
 export default {
   errors: [],
   response_data: [],
@@ -74,14 +74,14 @@ export default {
       return re.test(email);
     },
     save: function() {
-      this.data.firstname = this.$refs[firstname].value;
-      this.data.lastname = this.$refs[lastname].value;
-      this.data.email = this.$refs[email].value;
-      this.data.phone = this.$refs[phone].value;
-      this.data.country = this.$refs[country].value;
-      this.data.city = this.$refs[city].value;
-      this.data.education = this.$refs[education].value;
-      this.data.finished = this.$refs[finished].value;
+      this.data.firstname = this.$refs["firstname"].value;
+      this.data.lastname = this.$refs["lastname"].value;
+      this.data.email = this.$refs["email"].value;
+      this.data.phone = this.$refs["phone"].value;
+      this.data.country = this.$refs["country"].value;
+      this.data.city = this.$refs["city"].value;
+      this.data.education = this.$refs["education"].value;
+      this.data.finished = this.$refs["finished"].value;
       this.isEditing = !this.isEditing; 
     },
     mounted:function() {
