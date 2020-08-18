@@ -76,4 +76,10 @@ label
 .add
     position: relative
     top: 100px
+    
+    img
+        position: relative
+        top: 11px
+        right: 5px
+        padding: 5px 5px
 </style>

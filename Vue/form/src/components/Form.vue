@@ -6,7 +6,7 @@
       <Personal />
       <Location />
       <Education />
-      <input @click="save" v-if="isEditing" id="submit-form"  class="submit" type="submit" value="SAVE CHANGES">
+      <input @click="save" v-bind:disabled="isEditing" id="submit-form"  class="submit" type="submit" value="SAVE CHANGES">
     </form>
   </div>
 </template>

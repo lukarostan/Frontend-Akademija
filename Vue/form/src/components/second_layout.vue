@@ -3,15 +3,15 @@
     <h1>My Profile</h1>
     <ul >
       <li><h2><span id="name">{{firstname}}</span> <span id="surname">Surname</span></h2></li>
-      <li><span id="email"><img src="img/mail.png">name.surname@mail.com</span></li>
-      <li><span id="phone"><img src="img/tel.png">+385 95 555 8745</span></li>
+      <li><span id="email"><img class="infoIcon" src="img/mail.png">name.surname@mail.com</span></li>
+      <li><span id="phone"><img class="infoIcon" src="img/tel.png">+385 95 555 8745</span></li>
       <li><label>LOCATION</label></li>
       <li>Country: <span>Croatia</span></li>
       <li>City: <span>Zagreb</span></li>
       <li><label>EDUCATION</label></li>
       <li><label>2003</label><p>High School</p></li>
       <li><label>2008</label><p>Bachelor's Degree</p></li>
-      <li><button v-if="isEditing" id="edit" @click="isEditing = false"><img src="src\img\edit.png">EDIT</button></li>
+      <li><button  id="edit" @click="isEditing = false" ><img src="\img\edit.png">EDIT</button></li>
     </ul>
   </div>
 </template>
@@ -92,9 +92,9 @@ export default {
       },
     })
     .then(response => response.data)
-    .catch(error => {
+    /* .catch(error => {
       throw (event);
-    });
+    }); */
     }
   }
   }
@@ -108,9 +108,15 @@ ul
   text-align: left
   li
     padding: 5px 0px 
+    
+    .infoIcon
+      position: relative
+      top: 5px
+      right: 5px
+      
     button
       img
-        padding: 0px 10px
+        padding: 0px 05px
 h1
   font-size: 45px
   position: absolute

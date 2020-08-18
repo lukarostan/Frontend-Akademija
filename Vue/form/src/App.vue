@@ -23,7 +23,7 @@ export default {
   data(){
     return{
       showForm: true,
-      showInfo: false
+      showInfo: true
 
       
     }
