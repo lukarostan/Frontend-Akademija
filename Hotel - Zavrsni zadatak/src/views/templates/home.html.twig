@@ -1,0 +1,51 @@
+
+{% extends 'main_layout.html.twig' %}
+
+{% block header %}
+    <div class="top-bar">
+        <ul class="top__bar-links">
+            <li><a href="#"><img src="/images/Pin.png">Location</a></li>
+            <li><a href="#"><img src="/images/Envelope.png" alt="">Mail Us</a></li>
+            <li><a href="#"><img src="/images/loginkey.png" alt="">Login</a></li>
+        </ul>
+        <div class="top__bar-langsel"><img src="/images/Search.png"><a href="">DE</a><span> | </span><a href="" style="color:#9B6333;">EN</a></div>
+    </div>
+    <div class="nav-bar">
+        <img src="/images/Hotel.png" alt="page-logo">
+        <ul class="nav__bar-links">
+            <li><a href="#">Home</a></li>
+            
+            <li><a href="#">About</a></li>
+            
+            <li><a href="#">Rooms</a></li>
+            
+            <li><a href="#">Services</a></li>
+            
+            <li><a href="#">Blog</a></li>
+            
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="hero-container">
+            <img src="images/roombg.png">
+            <div class="hero-title-container">
+                <h2>Feel like home, but better.</h2>
+                <h3>World-famous. Deeply Relaxing</h3>
+                <button class="goldbutton">LEARN MORE</button>
+            </div>
+        </div>
+        <div class="rooms-grid-container">
+            <h2>Comfort &amp; Design to relax in Luxury Hotel</h2>
+            <h3>Every day is a new day for relaxation.</h3>
+            <button class="goldbutton">ABOUT US</button>
+            <p>Ut eros ipsum, vestibulum eget laoreet id, interdum sit amet massa. Aenean tincidunt est eu tortor pretium, sed blandit orci posuere. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend. </p>
+            <p>John Johnson <span>General manager</span></p>
+            <h2>Best Apartments</h2>
+        </div>
+
+    </div>
+{% endblock %}
