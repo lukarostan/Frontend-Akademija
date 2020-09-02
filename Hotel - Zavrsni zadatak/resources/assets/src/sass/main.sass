@@ -46,7 +46,7 @@ a:hover
     img
         width: 35px
         padding: 5px
-    .top__bar-links
+    .top-bar__links
         position: absolute
         left: 14.5vw
         display: flex
@@ -63,7 +63,7 @@ a:hover
             img
                 margin: 0px 7px
             
-    .top__bar-langsel
+    .top-bar__langsel
         width: fit-content
         margin: 10px 20px 
         position: absolute
@@ -188,22 +188,80 @@ a:hover
                         line-height: 23px
                         color: #9B6333
                         margin-top: 25px
-    .service-overview-container
+    .service-container
         margin-top: 1140px
-        
-        .service-imgcontainer
+        width: 100vw
+        .service-img-container
             display: grid
             grid-template-columns: 1fr 1fr
-            
-        .service-textcontainer
+            width: 100vw
+        .service-text-container
             color: white
+            margin-top: -570px
             position: absolute
-            left: 0px
-            
-            
-            
+            left: 14.5vw
+            h2
+                font-size: 42px
+                line-height: 56px
+                letter-spacing: 2px
+            h3
+                font-size: 20px
+                line-height: 23px
+                margin: 10px 0px 30px 0px
+            a
+                color: #9B6333
+            p
+                width: 670px
+                margin: 15px 0px
+        .service-feature-container
+            margin-top: -250px
+            position: absolute
+            left: 14.5vw
+            width: fit-content
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            .service-feature
+                margin: 10px
+                padding: 5px
+                display: flex
+                flex-direction: column
+                background-color: #F0ECE7
+                width: 254px
+                span
+                    font-size: 20px
+                    line-height: 25px
+                    color: #383B37
+                    border-bottom: 1px solid #9B6333
+                    width: fit-content
+                img
+                    width: 80px
+                    background-color: white
+    .news-container
+        position: absolute
+        left: 14.5vw
+        width: 100%
+        .news-slider
+            .news-item
+                filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+                width: fit-content
+                background-color: #fff
+                height: 500px
+                img
+                    height: 270px
+                    width: 560px
+                .news-item__promo
+                    width: 185px
+                    background-color: #9B6333
+                    height: 60px
+                    position: relative
+                    top: 90px
+                    img
                         
-                            
+                        height: 28px
+                        width: 28px
+                        margin: 5px
+    .reviews-container
+        
 
 
 .footer>*
