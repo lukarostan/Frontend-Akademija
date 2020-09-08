@@ -1,6 +1,8 @@
 
 {% extends 'main_layout.html.twig' %}
-
+{% block page_title %}
+Hotel
+{% endblock %}
 {% block header %}
     <div class="top-bar">
         <ul class="top-bar__links">
@@ -13,7 +15,7 @@
     <div class="nav-bar">
         <img src="/images/Hotel.png" alt="page-logo">
         <ul class="nav__bar-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             
             <li><a href="#">About</a></li>
             
@@ -27,15 +29,43 @@
         </ul>
     </div>
 
-{% endblock %}
+{% endblock %} 
 {% block content %}
     <div class="content">
         <div class="hero-container">
-            <img src="images/roombg.png">
+            <img class="herobg" src="images/roombg.png">
             <div class="hero-title-container ">
                 <h2 class="playfair bold">Feel like home, but better.</h2>
                 <h3 class="arial bold">World-famous. Deeply Relaxing</h3>
                 <button class="goldbutton">LEARN MORE</button>
+            </div>
+            <span class="follow arial bold">Follow us <img src="images/fb.png" alt=""> <img src="images/ig.png" alt=""> </span>
+            <div class="hero-slider">
+                <img class="arrowback" src="images/arrowback.png" alt="">
+                <div class="hero-slider__item">
+                    <img src="images/heroslider1.png" alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="arial bold">Standard Room 1</span>
+                        <a class="arial bold" href="">View details   ></a>
+                        <span class="arial bold">$90.00</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src="images/heroslider2.png" alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="arial bold">Standard Room 2</span>
+                        <a class="arial bold" href="/room/standard-room">View details   ></a>
+                        <span class="arial bold">$90.00</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src="images/heroslider1.png" alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="arial bold">Standard Room 3</span>
+                        <a class="arial bold" href="">View details   ></a>
+                        <span class="arial bold">$90.00</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="rooms-grid-container">
@@ -144,25 +174,92 @@
             </div>
         </div>
         <div class="news-container">
-            <h2 class="playfair bold">Recent news</h2>
+            <h2 class="news-container__title playfair bold" class="playfair bold">Recent news</h2>
             <div class="news-slider">
                 <div class="news-item">
                     <div class="news-item__promo">
                         <img src="images/promo.png" alt="">
-                        <span>Promo price!</span>
-                        <p>August 25-31</p>
-                    </div>
-                    <img src="images/exRoom.png" alt="">
+                        <span class="playfair bold">Promo price!</span>
+                        <p class="arial">August 25-31</p>
+                    </div>  
+                    <img src="images/newsRoom.png" alt="">
                     <div class="news-item__text">
-                        <span>Hotel news</span>
-                        <h2>Special offer for the end of the month!</h2>
-                        <p></p>
+                        <span class="arial bold">Hotel news</span>
+                        <h2 class="arial bold">Special offer for the end of the month!</h2>
+                        <p class="arial">Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. </p>
+                        <a class="arial bold" href="">Learn more  ></a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-item__promo">
+                        <img src="images/promo.png" alt="">
+                        <span class="playfair bold">Promo price!</span>
+                        <p class="arial">August 25-31</p>
+                    </div>  
+                    <img src="images/newsRoom.png" alt="">
+                    <div class="news-item__text">
+                        <span class="arial bold">Hotel news</span>
+                        <h2 class="arial bold">Special offer for the end of the month!</h2>
+                        <p class="arial">Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. </p>
+                        <a class="arial bold" href="">Learn more  ></a>
                     </div>
                 </div>
             </div>
+            <div class="news-container__background">
+            </div>
+        </div>
+        <div class="featured-container">
+            <img src="images/featuresBg.png" alt="">
+            <div class="featured-item">
+                <h2 class="playfair bold">Discover Hotel Features</h2>
+                <p class="arial">Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel.</p>
+                <button class="arial bold goldbutton">BOOK NOW</button>
+            </div>
         </div>
         <div class="reviews-container">
-            <h2 class="playfair bold">Guest Reviews</h2>
+            <h2 class="reviews-heading playfair bold">Guest Reviews</h2>
+            <div class="reviews-slider">
+                <div class="reviews-item">
+                    <div class="reviews-item__user">
+                        <img src="images/user1.png" alt="" class="user-avatar">
+                        <div class="user-info">
+                            <span class="username arial bold">Carol Blue</span>
+                            <span class="user-occupation">Copywriter</span>
+                        </div>
+                        <div class="rating-container">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starblank.png" alt="">
+                        </div>
+                    </div>
+                    <p class="review-text arial"> Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.  Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
+                </div>
+                <div class="reviews-item">
+                    <div class="reviews-item__user">
+                        <img src="images/user2.png" alt="" class="user-avatar">
+                        <div class="user-info">
+                            <span class="username arial bold">Ivonne smith</span>
+                            <span class="user-occupation">Model</span>
+                        </div>
+                        <div class="rating-container">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                            <img src="images/starfull.png" alt="">
+                        </div>
+                    </div>
+                    <p class="review-text arial"> Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
+                </div>
+                
+            </div>
+            <div class="reviews-slider__nav">
+                <div class="nav__button"></div>
+                <div class="nav__button"></div>
+                <div class="nav__button"></div>
+            </div>
         </div>
         
     </div>

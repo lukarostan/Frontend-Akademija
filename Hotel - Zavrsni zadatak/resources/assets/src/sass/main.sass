@@ -91,9 +91,14 @@ a:hover
         font-weight: bold
         font-size: 16px
         line-height: 23px
-        margin-top: 10px
+        margin-top: 12px
         li
             margin: 0px 20px
+            .goldbutton
+                height: 30px
+                font-size: 12px
+                line-height: 23px
+                width: 123px
         a
             color:#fff
             font-family: Arial
@@ -101,10 +106,21 @@ a:hover
     
     .hero-container
         width: 100%
-        height: fit-content
-        img
+        height: 920px
+        .follow
+            position: relative
+            top: -100px
+            left: 14.5vw
+            font-size: 20px
+            line-height: 25px
+            margin: 80px 0px 0px 5px
+            color: #fff
+            img
+                margin: 0px 15px
+                width: 22px
+        .herobg
             width: 100%
-            z-index: -1
+            z-index: -2
             position: relative
             filter: brightness(50%)
         .hero-title-container
@@ -122,10 +138,59 @@ a:hover
             button
                 width: 200px
                 margin-top: 30px
+        .hero-slider
+            display: flex
+            flex-direction: row
+            width: 1330px
+            position: relative
+            top: -460px
+            left: 30%
+            overflow: hidden
+            .arrowback
+                width: 22px
+                height: 29px
+                align-self: center
+                margin: 50px
+            .arrowback:hover
+                cursor: pointer
+                
+            .hero-slider__item:nth-of-type(1)
+                order: 1
+            .hero-slider__item:nth-of-type(2)
+                order: 2
+            .hero-slider__item:nth-of-type(3)
+                order: 3
+            .hero-slider__item
+                height: 350px
+                width: 440px
+                background-color: #fff
+                margin-right: 40px
+                img
+                    width: inherit
+                    
+                .hero-slider__item-text-container
+                    display: flex
+                    flex-direction: column
+                    span:nth-of-type(1)
+                        font-size: 20px
+                        line-height: 25px
+                        margin: 30px 0px 0px 30px
+                    span:nth-of-type(2)
+                        font-size: 30px
+                        line-height: 31px
+                        position: relative
+                        left: 320px
+                        bottom: 45px
+
+                    span
+                        color: #383B37
+                        width: fit-content
+                    a
+                        margin: 10px 0px 0px 30px
+                        color: #9B6333
+                        width: fit-content
     .rooms-grid-container
-        position: absolute
-        left: 14.5vw 
-        margin-top: 3vw
+        margin: 30px 10%
         h2
             letter-spacing: 2px
             font-size: 42px
@@ -135,6 +200,7 @@ a:hover
         .rooms-content
             display: inline-grid
             grid-template-columns: 40vw 40vw
+            margin: 70px 0px
             h2
                 order: 1
                 font-size: 42px
@@ -149,12 +215,11 @@ a:hover
             button
                 width: 170px
                 order: 5
-            
+                margin-top: 20px
             p:nth-of-type(1)
                 order: 2
             p:nth-of-type(2)
                 order: 4
-
         .rooms-grid
             display: grid
             grid-template-columns: 1fr 1fr 1fr 1fr
@@ -189,7 +254,6 @@ a:hover
                         color: #9B6333
                         margin-top: 25px
     .service-container
-        margin-top: 1140px
         width: 100vw
         .service-img-container
             display: grid
@@ -233,35 +297,258 @@ a:hover
                     color: #383B37
                     border-bottom: 1px solid #9B6333
                     width: fit-content
+                    margin: 5px 15px
+                p
+                    margin: 5px 15px
                 img
                     width: 80px
                     background-color: white
     .news-container
-        position: absolute
-        left: 14.5vw
-        width: 100%
+        /** position: absolute
+        /** left: 14.5vw **/ 
+        margin: 20px auto
+        height: 600px
+        
+        .news-container__background
+            background-color: #F0ECE7
+            width:  100%
+            height: 680px
+            z-index: -3
+            position: relative
+            top: -300px
+        .news-container__title
+            padding-bottom: 20px
+            width: fit-content
+            margin: 0px 15%
+
         .news-slider
+            display: flex
+            flex-direction: row
+            width: fit-content
+            margin: 0px auto
             .news-item
                 filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
                 width: fit-content
                 background-color: #fff
-                height: 500px
-                img
-                    height: 270px
-                    width: 560px
+                height: fit-content
+                margin-right: 40px
+                .news-item__text
+                    color: #383B37
+                    font-size: 16px
+                    line-height: 23px
+                    padding: 20px
+                    span
+                        color: #B2B2B2
+                        
+                    h2
+                        padding-top: 10px
+                        font-size: 20px
+                        line-height: 25px
+                    p
+                        width: 500px
+                    a
+                        color: #9B6333
+                        padding: 20px 0px
                 .news-item__promo
                     width: 185px
                     background-color: #9B6333
                     height: 60px
-                    position: relative
-                    top: 90px
+                    position: absolute
+                    top: 37px
+                    span
+                        color: #fff
+                    p
+                        color: #fff
+
                     img
                         
                         height: 28px
                         width: 28px
                         margin: 5px
+    .featured-container
+        height: 450px
+        img
+            position: absolute
+            z-index: -2
+        .featured-item
+            padding: 50px 40px 30px 40px
+            color: #383B37
+            background-color: #fff
+            margin: 10px 29%
+            position: relative
+            top: 80px
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
+            h2
+                font-size: 42px
+                line-height: 56px
+                letter-spacing: 2px
+                text-align:  left
+                margin: 0px 10px
+                margin-top: -30px
+            p
+                width: 700px
+                margin: 30px 10px
+
+            button
+                width: 180px
     .reviews-container
+        margin: 60px auto
+        display: flex
+        flex-direction: column
+        width: fit-content
+        .reviews-slider__nav
+                display: flex
+                flex-direction: row
+                height: fit-content
+                width: fit-content
+                margin: 10px auto
+                .nav__button
+                    background-color: #9B6333
+                    border-radius: 50px
+                    width: 10px
+                    margin: 0px 2px
+                    height: 10px
+        .reviews-heading
+            margin-bottom: 35px
+        .reviews-slider
+            display: flex
+            flex-direction:  row
+            width: fit-content
+            
+            .reviews-item
+                margin: 0px 75px
+                .reviews-item__user
+                    width: 440px
+                    height: 80px
+                    background: #F0ECE7
+                    border-radius: 50px
+                    display: flex
+                    flex-direction: row
+                    
+                    .user-info
+                        display: flex
+                        flex-direction: column
+                        color: #383B37
+                        margin: 15px 10px
+                        .username
+                            font-size: 20px
+                            line-height: 25px
+                        .user-occupation
+                            font-size: 16px
+                            line-height: 23px
+                    .rating-container
+                        width: fit-content
+                        margin: 25px 30px
+                        
+            .review-text
+                width: 440px
+                margin: 20px 0px 0px 120px
+                color: #383B37
+.content-room
+    margin: 0px 20%
+    .image-slider-container
+        width: inherit
+        display: flex
+        flex-direction: row
+        .image-slider
+            width: inherit
+            margin: 30px auto
+            img
+                transition: outline 0.1s
+            img:hover
+                outline: 3px solid #9B6333
+            
+        .arrowleft
+            height: 30px
+            align-self: center
+        .arrowright
+            height: 30px
+            align-self: center
+            transform: rotate(180deg)
+    .room-info-container
+        grid-gap: 10px
+        color: #383B37
+        display: grid
+        grid-template-columns: 1fr 1fr
+        .basic-info
+            order: 1
+            
+            h2
+                font-size: 42px
+                line-height: 56px
+            .capacity
+                display: flex
+                flex-direction: row
+                span
+                    margin: 0px 30px
+                    font-weight: bold
+                    font-size: 20px
+                    line-height: 25px
+                    align-self: center
+            p
+                font-size: 16px
+        .room-services
+            order: 3
+            height: fit-content
+            h3
+                font-size: 20px
+                line-height: 25px
+            ul
+                border: 1px solid #C4C4C4
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                li
+                    padding: 10px 15px
+        .hotel-rules
+            order: 5
+            form
+                display: grid
+                grid-template-columns: auto auto
+            h3
+                font-size: 20px
+                line-height: 25px
+        .book
+            width: 440px
+            order: 2
+            background: #F0ECE7
+            display: flex
+            flex-direction: column
+            
+            .dates
+                display: flex
+                flex-direction: row
+                align-self: center
+                justify-content:  center
+                input
+                    margin: 0px 30px
+                    width: 150px
+            .guests
+                display: flex
+                flex-direction: row
+                align-self: center
+                input
+                    margin: 0px 30px
+                    width: 150px
+            h3
+                font-size: 36px
+                line-height: 41px
+                margin: 25px
+            .goldbutton
+                width: 275px
+                align-self: center
+                margin: 50px 0px
+        .suggestions
+            order: 4
+            h3
+                font-size: 36px
+                line-height: 41px
+            .suggestion-item
+                background:  #F2F2F2
+                width: 200px
+                h4
+                    width: fit-content
         
+
 
 
 .footer>*
@@ -287,9 +574,15 @@ a:hover
         p
             font-size: 20px
             line-height: 23px
+            width: 198px
+            margin: 5px
         span
             font-size: 20px
             line-height: 25px
+            margin: 80px 0px 0px 5px
+            img
+                margin: 0px 15px
+                
         img
             width: 22px
         .footer-title-logo
@@ -300,9 +593,11 @@ a:hover
         
         span:nth-of-type(1)
             color: #D0D0D0
+            margin: 10px 0px 5px
         span:nth-of-type(2)
         span:nth-of-type(3)
             color: #D0D0D0
+            margin: 10px 0px 5px
         span:nth-of-type(4)
         
     .footer-contact
@@ -310,9 +605,15 @@ a:hover
         flex-direction: column
         a
             color: #fff
+        a:nth-of-type(1)
+            margin-top: 40px
+        a:nth-of-type(3)
+            margin-top: 35px
     .footer-newsletter
         display: flex
         flex-direction: column
+        h2
+            margin-bottom: 20px
         input
             background-color: transparent
             border: none
@@ -344,15 +645,19 @@ a:hover
     span
         color: #D0D0D0
         align-self: center
+        margin: 0px 14.5%
     a
         color: #fff
     span:nth-of-type(2)
         color: #D0D0D0
     .footer__bottom-container
         height: 100%
-        position: absolute
-        left: 500px
-    .footer__bottom-container>*
-        height: 20px
-        margin: 0px 20px
+        display: flex
+        flex-direction: row
+        margin: auto 18%
+        width: fit-content
+        a,span
+            margin: auto 19px
+            
+    
         

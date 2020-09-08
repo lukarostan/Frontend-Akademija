@@ -1,22 +1,10 @@
-import Vue from 'vue';
+var heroSliderN = 1;
 
-Vue.component('v-application', require('./components/app.vue'))
-
-Vue.component('v-container', require('./components/container.vue'))
-Vue.component('v-header', require('./components/header.vue'))
-Vue.component('v-footer', require('./components/footer.vue'))
-
-Vue.component('v-card', require('./components/card/card.vue'))
-Vue.component('v-card-header', require('./components/card/card-header.vue'))
-Vue.component('v-card-footer', require('./components/card/card-footer.vue'))
-Vue.component('v-card-body', require('./components/card/card-body.vue'))
-
-Vue.component('v-btn', require('./components/button.vue'))
-
-Vue.prototype.$window = window;
-
-const app = new Vue({
-    el: '#app'
+$(".hero-slider .arrowback").on("click",function(){
+    $(".hero-slider__item:nth-of-type("+heroSliderN+")").css("order", +1);
+    heroSliderN +=1;
+    if (heroSliderN == 4){
+        heroSliderN = 1;
+    }
+    console.log(heroSliderN)
 });
-
-window.vapp = app;
