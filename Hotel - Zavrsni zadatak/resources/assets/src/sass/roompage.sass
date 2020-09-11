@@ -1,0 +1,179 @@
+.content-room
+    margin: 0px 20%
+    .image-slider-container
+        width: inherit
+        display: flex
+        flex-direction: row
+        .image-slider
+            width: inherit
+            margin: 30px auto
+            img
+                transition: outline 0.1s
+            img:hover
+                outline: 3px solid $gold
+            
+        .arrowleft
+            height: 30px
+            align-self: center
+        .arrowright
+            height: 30px
+            align-self: center
+            transform: rotate(180deg)
+    .room-info-container
+        grid-gap: 10px
+        color: $dark-gray
+        display: grid
+        grid-template-columns: 6fr 4fr
+        .basic-info
+            order: 1
+            
+            h2
+                font-size: 42px
+                line-height: 56px
+            .capacity
+                display: flex
+                flex-direction: row
+                span
+                    margin: 0px 30px
+                    font-weight: bold
+                    font-size: 20px
+                    line-height: 25px
+                    align-self: center
+            p
+                font-size: 16px
+        .room-services
+            order: 3
+            height: fit-content
+            h3
+                font-size: 20px
+                line-height: 25px
+            ul
+                border: 1px solid #C4C4C4
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                li
+                    padding: 10px 15px
+        .hotel-rules
+            order: 5
+            form
+                display: grid
+                grid-template-columns: auto auto
+            h3
+                font-size: 20px
+                line-height: 25px
+        .book
+            width: 440px
+            order: 2
+            background: $desert-storm
+            display: flex
+            flex-direction: column
+            
+            .dates
+                display: flex
+                flex-direction: row
+                align-self: center
+                justify-content:  center
+                input
+                    margin: 0px 30px
+                    width: 150px
+            .guests
+                display: flex
+                flex-direction: row
+                align-self: center
+                input
+                    margin: 0px 30px
+                    width: 150px
+            h3
+                font-size: 36px
+                line-height: 41px
+                margin: 25px
+            .button
+                width: 275px
+                align-self: center
+                margin: 50px 0px
+        .suggestions
+            order: 4
+            h3
+                font-size: 36px
+                line-height: 41px
+            .suggestion-item-container
+                display: flex
+                flex-direction: row
+                .suggestion-item
+                    background:  #F2F2F2
+                    width: 200px
+                    margin: 0px 20px
+                    h4
+                        width: 200px
+                        font-size: 16px
+                        line-height: 25px
+    .comments-container
+        width: fit-content
+        h3
+            font-size: 20px
+            line-height: 25px
+            width: fit-content
+
+        
+        .comment
+            
+            width: 800px
+            .user
+                
+                display: flex
+                flex-direction: row
+                .username
+                    align-self: center
+                    display: flex
+                    flex-direction: column
+                    margin: 0px 10px
+                .reply-button
+                    height: fit-content
+                    margin: auto 0px auto 450px
+        .comment-text
+            width: 670px
+            float: right
+        .comment-reply
+            width: 600px
+            margin: 10px 10%
+            .user
+                width: fit-content
+                .reply-button
+                    margin: auto 0px auto 150px
+            .comment-reply-text
+                width: 440px
+                float: right
+        .comment-form
+            margin-top: 100px
+            display: flex
+            flex-direction: column
+            width: 1000px
+            label
+                font-family: 'Lato', sans-serif
+                margin: 10px 30px
+            label:nth-of-type(2)
+                position: relative
+                left: 395px
+            input
+                border: 1px solid #CCCCCC
+                box-sizing: border-box
+                box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08)
+                padding: 10px 15px
+            .form-top
+                display: flex
+                flex-direction: row
+                input
+                    width: 440px
+                    margin: 0px 30px
+                
+            #comment
+                width: 940px
+                height: 150px
+                margin: 0px 30px
+                padding: 10px 15px 10px 15px
+            .checkbox
+                margin: 15px 0px 15px 30px
+            .button
+                background: $dark-gray
+                width: 167px
+                margin: 10px 30px 60px 30px

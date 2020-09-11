@@ -6,11 +6,11 @@ Hotel
 {% block header %}
     <div class="top-bar">
         <ul class="top-bar__links">
-            <li><a class="arial" href="#"><img src="/images/Pin.png">Location</a></li>
-            <li><a class="arial" href="#"><img src="/images/Envelope.png" alt="">Mail Us</a></li>
-            <li><a class="arial" href="#"><img src="/images/loginkey.png" alt="">Login</a></li>
+            <li><a href="#"><img src="/images/Pin.png">Location</a></li>
+            <li><a href="#"><img src="/images/Envelope.png" alt="">Mail Us</a></li>
+            <li><a href="#"><img src="/images/loginkey.png" alt="">Login</a></li>
         </ul>
-        <div class="top-bar__langsel arial"><img src="/images/Search.png"><a href="">DE</a><span> | </span><a href="" style="color:#9B6333;">EN</a></div>
+        <div class="top-bar__langsel"><img src="/images/Search.png"><a href="">DE</a><span> | </span><a href="" style="color:#9B6333;">EN</a></div>
     </div>
     <div class="nav-bar">
         <img src="/images/Hotel.png" alt="page-logo">
@@ -36,34 +36,74 @@ Hotel
             <img class="herobg" src="images/roombg.png">
             <div class="hero-title-container ">
                 <h2 class="playfair bold">Feel like home, but better.</h2>
-                <h3 class="arial bold">World-famous. Deeply Relaxing</h3>
-                <button class="goldbutton">LEARN MORE</button>
+                <h3 class="bold">World-famous. Deeply Relaxing</h3>
+                <button class="button">LEARN MORE</button>
             </div>
-            <span class="follow arial bold">Follow us <img src="images/fb.png" alt=""> <img src="images/ig.png" alt=""> </span>
+            <span class="follow bold">Follow us <img src="images/fb.png" alt=""> <img src="images/ig.png" alt=""> </span>
             <div class="hero-slider">
-                <img class="arrowback" src="images/arrowback.png" alt="">
+                <div class="hero-left-button"></div>
                 <div class="hero-slider__item">
-                    <img src="images/heroslider1.png" alt="">
+                    <img src={{ products[0].images[0].url }} alt="">
                     <div class="hero-slider__item-text-container">
-                        <span class="arial bold">Standard Room 1</span>
-                        <a class="arial bold" href="">View details   ></a>
-                        <span class="arial bold">$90.00</span>
+                        <span class="bold">{{ products[0].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[0].price }}kn</span>
                     </div>
                 </div>
                 <div class="hero-slider__item">
-                    <img src="images/heroslider2.png" alt="">
+                    <img src={{ products[1].images[1].url }} alt="">
                     <div class="hero-slider__item-text-container">
-                        <span class="arial bold">Standard Room 2</span>
-                        <a class="arial bold" href="/room/standard-room">View details   ></a>
-                        <span class="arial bold">$90.00</span>
+                        <span class="bold">{{ products[1].title }}</span>
+                        <a class="bold" href="/room/standard-room">View details   ></a>
+                        <span class="bold">{{ products[1].price }}kn</span>
                     </div>
                 </div>
                 <div class="hero-slider__item">
-                    <img src="images/heroslider1.png" alt="">
+                    <img src={{ products[2].images[2].url }}  alt="">
                     <div class="hero-slider__item-text-container">
-                        <span class="arial bold">Standard Room 3</span>
-                        <a class="arial bold" href="">View details   ></a>
-                        <span class="arial bold">$90.00</span>
+                        <span class="bold">{{ products[2].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[2].price }}kn</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src={{ products[3].images[0].url }}  alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="bold">{{ products[3].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[3].price }}kn</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src={{ products[4].images[2].url }}  alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="bold">{{ products[4].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[4].price }}kn</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src={{ products[5].images[2].url }}  alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="bold">{{ products[5].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[5].price }}kn</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src={{ products[6].images[2].url }}  alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="bold">{{ products[6].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[6].price }}kn</span>
+                    </div>
+                </div>
+                <div class="hero-slider__item">
+                    <img src={{ products[7].images[2].url }}  alt="">
+                    <div class="hero-slider__item-text-container">
+                        <span class="bold">{{ products[7].title }}</span>
+                        <a class="bold" href="">View details   ></a>
+                        <span class="bold">{{ products[7].price }}kn</span>
                     </div>
                 </div>
             </div>
@@ -71,139 +111,130 @@ Hotel
         <div class="rooms-grid-container">
             <div class="rooms-content">
                 <h2 class="playfair bold">Comfort &amp; Design to relax in Luxury Hotel</h2>
-                <h3 class="arial bold">Every day is a new day for relaxation.</h3>
-                <button class="goldbutton">ABOUT US</button>
-                <p class="arial">Ut eros ipsum, vestibulum eget laoreet id, interdum sit amet massa. Aenean tincidunt est eu tortor pretium, sed blandit orci posuere. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend. </p>
-                <p class="arial"><b>John Johnson</b> - <span>General manager</span></p>
+                <h3 class="bold">Every day is a new day for relaxation.</h3>
+                <button class="button">ABOUT US</button>
+                <p>Ut eros ipsum, vestibulum eget laoreet id, interdum sit amet massa. Aenean tincidunt est eu tortor pretium, sed blandit orci posuere. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend. </p>
+                <p><b>John Johnson</b> - <span>General manager</span></p>
             </div>
             <h2 class="playfair bold">Best Apartments</h2>
             <div class="rooms-grid">
                 <div class="grid-item">
-                    <img src="images/natRoom.png" alt="">
+                    <img src={{ products[0].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[0].title }}</span>
+                            <span class="price bold">{{ products[0].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/natRoom.png" alt="">
+                    <img src={{ products[1].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[1].title }}</span>
+                            <span class="price bold">{{ products[1].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/supRoom.png" alt="">
+                    <img src={{ products[2].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[2].title }}</span>
+                            <span class="price bold">{{ products[2].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/exRoom.png" alt="">
+                    <img src={{ products[3].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[3].title }}</span>
+                            <span class="price bold">{{ products[3].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/stRoom.png" alt="">
+                    <img src={{ products[4].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[4].title }}</span>
+                            <span class="price bold">{{ products[4].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/supRoom.png" alt="">
+                    <img src={{ products[5].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[5].title }}</span>
+                            <span class="price bold">{{ products[5].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/supRoom.png" alt="">
+                    <img src={{ products[6].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[6].title }}</span>
+                            <span class="price bold">{{ products[6].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
                 <div class="grid-item">
-                    <img src="images/natRoom.png" alt="">
+                    <img src={{ products[7].images[0].url }} alt="">
                         <div class="grid__item-text">
-                            <span class="title arial bold">Superior Room</span>
-                            <span class="price arial bold">$ 190.00</span>
-                            <a href="#" class="details arial bold">View Details  ></a>
+                            <span class="title bold">{{ products[7].title }}</span>
+                            <span class="price bold">{{ products[7].price }}kn</span>
+                            <a href="#" class="details bold">View Details  ></a>
                         </div>
                 </div>
             </div>
         </div>
-        <div class="service-container">
+        <div class="service">
             <div class="service-img-container">
                 <img src="images/serviceBg.png" alt="">
                 <img src="images/serviceImg.png" alt="">
             </div>
-            <div class="service-text-container">
-                <h2 class="playfair bold">Excellent Service</h2>
-                <h3 class="arial bold">Every day is a new day for relaxation.</h3>
-                <p class="arial">Ut eros ipsum, vestibulum eget laoreet id, interdum sit amet massa. Aenean tincidunt est eu tortor pretium, sed blandit orci posuere. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
-                <a href="" class="arial bold">Learn more  ></a>
-            </div>
-            <div class="service-feature-container">
-                <div class="service-feature">
-                    <img src="images/bed.png" alt="">
-                    <span class="arial bold">Orthopedic beds</span>
-                    <p class="arial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum.</p>
+            <div class="service-container">
+                <div class="service-text-container">
+                    <h2 class="playfair bold">Excellent Service</h2>
+                    <h3 class="bold">Every day is a new day for relaxation.</h3>
+                    <p>Ut eros ipsum, vestibulum eget laoreet id, interdum sit amet massa. Aenean tincidunt est eu tortor pretium, sed blandit orci posuere. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
+                    <a href="" class="bold">Learn more  ></a>
                 </div>
-                <div class="service-feature">
-                    <img src="images/food.png" alt="">
-                    <span class="arial bold">Extraordinary cousine</span>
-                    <p class="arial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum.</p>
-                </div>
-                <div class="service-feature">
-                    <img src="images/coffe.png" alt="">
-                    <span class="arial bold">Custom coffe</span>
-                    <p class="arial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum.</p>
+                <div class="service-feature-container">
+                    <div class="service-feature">
+                        <img src="images/bed.png" alt="">
+                        <span class="bold">Orthopedic beds</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum.</p>
+                    </div>
+                    <div class="service-feature">
+                        <img src="images/food.png" alt="">
+                        <span class="bold">Extraordinary cousine</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum.</p>
+                    </div>
+                    <div class="service-feature">
+                        <img src="images/coffe.png" alt="">
+                        <span class="bold">Custom coffe</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum.</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="news-container">
             <h2 class="news-container__title playfair bold" class="playfair bold">Recent news</h2>
             <div class="news-slider">
+                <div class="news-left-button"></div>
                 <div class="news-item">
                     <div class="news-item__promo">
                         <img src="images/promo.png" alt="">
                         <span class="playfair bold">Promo price!</span>
-                        <p class="arial">August 25-31</p>
+                        <p>August 25-31</p>
                     </div>  
                     <img src="images/newsRoom.png" alt="">
                     <div class="news-item__text">
-                        <span class="arial bold">Hotel news</span>
-                        <h2 class="arial bold">Special offer for the end of the month!</h2>
-                        <p class="arial">Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. </p>
-                        <a class="arial bold" href="">Learn more  ></a>
+                        <span class="bold">Hotel news</span>
+                        <h2 class="bold">Special offer for the end of the month!</h2>
+                        <p>Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. </p>
+                        <a class="bold" href="">Learn more  ></a>
                     </div>
                 </div>
-                <div class="news-item">
-                    <div class="news-item__promo">
-                        <img src="images/promo.png" alt="">
-                        <span class="playfair bold">Promo price!</span>
-                        <p class="arial">August 25-31</p>
-                    </div>  
-                    <img src="images/newsRoom.png" alt="">
-                    <div class="news-item__text">
-                        <span class="arial bold">Hotel news</span>
-                        <h2 class="arial bold">Special offer for the end of the month!</h2>
-                        <p class="arial">Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. </p>
-                        <a class="arial bold" href="">Learn more  ></a>
-                    </div>
-                </div>
+                
+                <div class="news-right-button"></div>
             </div>
             <div class="news-container__background">
             </div>
@@ -212,18 +243,19 @@ Hotel
             <img src="images/featuresBg.png" alt="">
             <div class="featured-item">
                 <h2 class="playfair bold">Discover Hotel Features</h2>
-                <p class="arial">Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel.</p>
-                <button class="arial bold goldbutton">BOOK NOW</button>
+                <p>Proin aliquet diam a laoreet sodales. Donec in elementum augue. Nam non nibh cursus, sodales ex at, dictum sem. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel. Phasellus molestie porta diam, at feugiat ipsum lobortis in. Nunc vel.</p>
+                <button class="bold button">BOOK NOW</button>
             </div>
         </div>
         <div class="reviews-container">
             <h2 class="reviews-heading playfair bold">Guest Reviews</h2>
             <div class="reviews-slider">
+                <div class="nav-arrow reviews-left-button"></div>
                 <div class="reviews-item">
                     <div class="reviews-item__user">
                         <img src="images/user1.png" alt="" class="user-avatar">
                         <div class="user-info">
-                            <span class="username arial bold">Carol Blue</span>
+                            <span class="username bold">Carol Blue</span>
                             <span class="user-occupation">Copywriter</span>
                         </div>
                         <div class="rating-container">
@@ -234,13 +266,13 @@ Hotel
                             <img src="images/starblank.png" alt="">
                         </div>
                     </div>
-                    <p class="review-text arial"> Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.  Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
+                    <p class="review-text"> Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.  Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
                 </div>
                 <div class="reviews-item">
                     <div class="reviews-item__user">
                         <img src="images/user2.png" alt="" class="user-avatar">
                         <div class="user-info">
-                            <span class="username arial bold">Ivonne smith</span>
+                            <span class="username bold">Ivonne smith</span>
                             <span class="user-occupation">Model</span>
                         </div>
                         <div class="rating-container">
@@ -251,9 +283,9 @@ Hotel
                             <img src="images/starfull.png" alt="">
                         </div>
                     </div>
-                    <p class="review-text arial"> Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
+                    <p class="review-text"> Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Vivamus sit amet ornare lorem. Nunc mi orci, sodales id odio nec, bibendum ultricies est. Quisque nec tortor quis tellus tincidunt commodo. Sed aliquet convallis ante at eleifend.</p>
                 </div>
-                
+                <div class="nav-arrow reviews-right-button"></div>
             </div>
             <div class="reviews-slider__nav">
                 <div class="nav__button"></div>
@@ -268,36 +300,36 @@ Hotel
     <div class="footer">
         <div class="footer-title">
             <img class="footer-title-logo" src="images/Hotel.png" alt="">
-            <p class="arial">Every day is a new day for relaxation.</p>
-            <span class="arial bold">Follow us <img src="images/fb.png" alt=""> <img src="images/ig.png" alt=""> </span>
+            <p>Every day is a new day for relaxation.</p>
+            <span class="bold">Follow us <img src="images/fb.png" alt=""> <img src="images/ig.png" alt=""> </span>
         </div>
         <div class="footer-address">
-            <h2 class="arial bold">Address</h2>
-            <span class="arial">London</span>
-            <span class="arial bold">Main street 1 London, CA 70413<br>Open: 9:30AM 5:30PM</span>
-            <span class="arial">New York</span>
-            <span class="arial bold">Great street Broadway, NT 10013<br>Open: 8:30AM 4:30PM</span>
+            <h2 class="bold">Address</h2>
+            <span>London</span>
+            <span class="bold">Main street 1 London, CA 70413<br>Open: 9:30AM 5:30PM</span>
+            <span>New York</span>
+            <span class="bold">Great street Broadway, NT 10013<br>Open: 8:30AM 4:30PM</span>
         </div>
         <div class="footer-contact ">
             <h2 class="bold">Contact us</h2>
-            <a class="arial bold" href="teL:+44 (800) 456-78-91">+44 (800) 456-78-91</a>
-            <a class="arial bold" href="mailto:hotel.london@mail.com">hotel.london@mail.com</a>
-            <a class="arial bold" href="tel:+1 (810) 456-78-91">+1 (810) 456-78-91</a>
-            <a class="arial bold" href="mailto:hotel.ny@mail.com">hotel.ny@mail.com</a>
+            <a class="bold" href="teL:+44 (800) 456-78-91">+44 (800) 456-78-91</a>
+            <a class="bold" href="mailto:hotel.london@mail.com">hotel.london@mail.com</a>
+            <a class="bold" href="tel:+1 (810) 456-78-91">+1 (810) 456-78-91</a>
+            <a class="bold" href="mailto:hotel.ny@mail.com">hotel.ny@mail.com</a>
         </div>
         <footer class="footer-newsletter">
             <h2 class="bold">Stay in touch</h2>
             <input type="text" placeholder="Your e-mail">
-            <button class="arial bold">SUBSCRIBE</button>
+            <button class="bold">SUBSCRIBE</button>
         </footer>
         
     </div>   
-    <div class="footer-bottom arial">
-        <span >@2020, Frontend akademija</span>
+    <div class="footer-bottom">
+        <span class="footer-bottom-title">@2020, Frontend akademija</span>
         <div class="footer__bottom-container">
-            <a class="arial bold" href="">Privacy Policy</a>
-            <a class="arial bold" href="">Site map</a>
-            <span class="arial">All Rights Reserved</span>
+            <a class="bold" href="">Privacy Policy</a>
+            <a class="bold" href="">Site map</a>
+            <span>All Rights Reserved</span>
         </div>
     </div> 
 {% endblock %}
