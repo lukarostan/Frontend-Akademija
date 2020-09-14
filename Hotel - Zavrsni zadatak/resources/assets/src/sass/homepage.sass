@@ -2,7 +2,7 @@
     width: 100%
     .hero-container
         width: 100%
-        height: fit-content
+        height: 95vh
         .follow
             position: relative
             top: -100px
@@ -34,68 +34,60 @@
             button
                 width: 200px
                 margin-top: 30px
-        .hero-slider
-            display: flex
-            flex-direction: row
-            width: fit-content
+        .hero-slider-container
             position: relative
             top: -460px
             left: 30%
-            overflow: hidden
-            .hero-left-button
-                width: 25px
-                height: 25px
-                align-self: center
-                margin: 50px
-                border-left: 4px solid #fff
-                border-bottom: 4px solid #fff
-                transform: rotate(45deg)
+            display: flex
+            flex-direction: row
+            width: 70%
             .hero-left-button:hover
                 cursor: pointer
-                
-            .hero-slider__item:nth-of-type(1)
-                order: 1
-            .hero-slider__item:nth-of-type(2)
-                order: 2
-            .hero-slider__item:nth-of-type(3)
-                order: 3
-            .hero-slider__item
-                height: 350px
-                width: 440px
-                background-color: #fff
-                margin-right: 40px
-                img
-                    width: inherit
-                    height: 220px
-                .hero-slider__item-text-container
-                    display: flex
-                    flex-direction: column
-                    span:nth-of-type(1)
-                        font-size: 20px
-                        line-height: 25px
-                        margin: 30px 0px 0px 30px
-                    span:nth-of-type(2)
-                        font-size: 30px
-                        line-height: 31px
-                        position: relative
-                        left: 320px
-                        bottom: 45px
-
-                    span
-                        color: $dark-gray
-                        width: fit-content
-                    a
-                        margin: 10px 0px 0px 30px
-                        color: $gold
-                        width: fit-content
+                border-color: $gold
+            .hero-left-button
+                margin: 50px
+                border-color: #fff
+            .hero-slider
+                display: flex
+                flex-direction: row
+                height: fit-content
+                width: 100%
+                overflow: hidden
+                .hero-slider__item
+                    height: 350px
+                    width: 440px
+                    background-color: #fff
+                    margin: 0px 20px
+                    transition: transform 0.4s ease-in-out
+                    img
+                        width: inherit
+                        height: 220px
+                    .hero-slider__item-text-container
+                        display: flex
+                        flex-direction: column
+                        span:nth-of-type(1)
+                            font-size: 20px
+                            line-height: 25px
+                            margin: 30px 0px 0px 30px
+                        span:nth-of-type(2)
+                            font-size: 30px
+                            line-height: 31px
+                            position: relative
+                            left: 320px
+                            bottom: 45px
+                        span
+                            color: $dark-gray
+                            width: fit-content
+                        a
+                            margin: 10px 0px 0px 30px
+                            color: $gold
+                            width: fit-content
     .rooms-grid-container
         margin: 30px 10%
         h2
             letter-spacing: 2px
             font-size: 42px
             line-height: 56px
-        .rooms-content>*
-            
         .rooms-content
             display: inline-grid
             grid-template-columns: 40vw 40vw
@@ -123,31 +115,30 @@
             display: grid
             grid-template-columns: 1fr 1fr 1fr 1fr
             .grid-item
-                margin: 15px 0px
+                margin: 15px
                 width: 90%
-                height: 350px
+                height: 93%
                 background-color: #f2f2f2
                 img
                     width: 100%
+                .grid__item-text>*
+                    margin: 3%
                 .grid__item-text
                     display: grid
                     grid-template-columns: 1fr 1fr
                     margin: 10px 5px
-                    justify-items: center
                     color: $dark-gray
                     .title
                         font-size: 20px
                         line-height: 25px
-                        width: fit-content
+                        
                     .price
                         font-size: 30px
                         line-height: 31px
-                        width: fit-content
                     .details
                         font-size: 16px
                         line-height: 23px
                         color: $gold
-                        margin-top: 25px
     .service
         width: 100%
         .service-img-container
@@ -160,7 +151,7 @@
             display: grid
             grid-template-rows: 1fr 1fr
             width: fit-content
-            margin: -30% auto 0px 18%
+            margin: -32.5% auto 0px 10%
             .service-text-container
                 color: white
                 height: fit-content
@@ -177,7 +168,6 @@
                 p
                     width: 670px
                     margin: 15px 0px
-                    
             .service-feature-container
                 width: fit-content
                 margin-top: 10%
@@ -185,30 +175,30 @@
                 grid-template-columns: 1fr 1fr 1fr
                 .service-feature
                     margin: 10px
-                    padding: 5px
                     display: flex
                     flex-direction: column
-                    background-color: $desert-storm
                     width: 254px
-                    span
-                        font-size: 20px
-                        line-height: 25px
-                        color: $dark-gray
-                        border-bottom: 1px solid $gold
-                        width: fit-content
-                        margin: 5px 15px
-                    p
-                        margin: 5px 15px
                     img
                         width: 80px
-                        background-color: white
+                        padding: 10px 0px
+                    .feature-text
+                        background-color: $desert-storm
+                        padding: 10px 5px
+                        span
+                            font-size: 20px
+                            line-height: 25px
+                            color: $dark-gray
+                            border-bottom: 1px solid $gold
+                            width: fit-content
+                            margin: 5px 15px
+                        p
+                            margin: 5px 15px
     .news-container
         margin: 20px auto
         height: 600px
-        width: fit-content
+        width: 100%
         .news-container__background
             background-color: $desert-storm
-            width:  1920px
             height: 680px
             z-index: -3
             position: relative
@@ -216,63 +206,72 @@
         .news-container__title
             padding-bottom: 20px
             width: fit-content
-            margin: 0px
-        .news-slider
+            margin: 0px 17.5%
+        .news-slider-container
+            width: 70%
             display: flex
             flex-direction: row
-            width: fit-content
+            align-self: center
             margin: 0px auto
+            height: 90%
+            .nav-arrow:hover
+                border-color: $gold
             .news-left-button, .news-right-button:hover
                 cursor: pointer
-            .news-left-button, .news-right-button
-                height: 20px
-                width: 20px
-                border-left: 4px solid $dark-gray
-                border-bottom: 4px solid $dark-gray
-                align-self: center
-            .news-left-button
-                transform: rotate(45deg)
             .news-right-button
                 transform: rotate(225deg)
-            .news-item
-                filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
-                width: fit-content
-                background-color: #fff
-                height: fit-content
-                margin: 0px 20px
-                .news-item__text
-                    color: $dark-gray
-                    font-size: 16px
-                    line-height: 23px
-                    padding: 20px
-                    span
-                        color: #B2B2B2
-                        
-                    h2
-                        padding-top: 10px
-                        font-size: 20px
-                        line-height: 25px
-                    p
-                        width: 500px
-                    a
-                        color: $gold
-                        padding: 20px 0px
-                .news-item__promo
-                    width: 185px
-                    background-color: $gold
-                    height: 60px
-                    position: absolute
-                    top: 37px
-                    span
-                        color: #fff
-                    p
-                        color: #fff
-
-                    img
-                        
-                        height: 28px
-                        width: 28px
-                        margin: 5px
+            .news-slider
+                display: flex
+                flex-direction: row
+                width: 90%
+                overflow: hidden
+                height: 95%
+                align-self: center
+                .news-item
+                    filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+                    width: fit-content
+                    background-color: #fff
+                    height: fit-content
+                    margin: 0px 20px
+                    transition: transform 0.4s ease-in-out
+                    .news-item__text
+                        color: $dark-gray
+                        font-size: 16px
+                        line-height: 23px
+                        padding: 20px
+                        span
+                            color: #B2B2B2
+                            
+                        h2
+                            padding-top: 10px
+                            font-size: 20px
+                            line-height: 25px
+                        p
+                            width: 500px
+                        a
+                            color: $gold
+                            padding: 20px 0px
+                    .news-item__promo
+                        display: flex
+                        flex-direction: row
+                        width: 185px
+                        background-color: $gold
+                        height: 60px
+                        position: absolute
+                        top: 37px
+                        img
+                            align-self: center
+                            height: 30px
+                            width: 30px
+                            margin: 10px
+                        .promo-text
+                            color: #fff
+                            display: flex
+                            flex-direction: column
+                            margin: auto 5px
+                            height: fit-content
+                            p
+                                margin: 0px
     .featured-container
         height: 450px
         img
@@ -301,7 +300,7 @@
         margin: 60px auto
         display: flex
         flex-direction: column
-        width: fit-content
+        width: 80%
         .reviews-slider__nav
                 display: flex
                 flex-direction: row
@@ -316,38 +315,45 @@
                     height: 10px
         .reviews-heading
             margin-bottom: 35px
-        .reviews-slider
+        .reviews-slider-container
             display: flex
-            flex-direction:  row
+            flex-direction: row
             width: 100%
             .reviews-right-button
                 transform: rotate(225deg)
-            .reviews-item
-                margin: 0px 75px
-                .reviews-item__user
-                    width: 440px
-                    height: 80px
-                    background: $desert-storm
-                    border-radius: 50px
-                    display: flex
-                    flex-direction: row
-                    
-                    .user-info
+            .nav-arrow:hover
+                cursor: pointer
+                border-color: $gold
+            .reviews-slider
+                display: flex
+                flex-direction:  row
+                width: 100%
+                overflow: hidden
+                .reviews-item
+                    margin: 0px 3%
+                    transition: transform 0.4s ease-in-out
+                    .reviews-item__user
+                        width: 440px
+                        height: 80px
+                        background: $desert-storm
+                        border-radius: 50px
                         display: flex
-                        flex-direction: column
-                        color: $dark-gray
-                        margin: 15px 10px
-                        .username
-                            font-size: 20px
-                            line-height: 25px
-                        .user-occupation
-                            font-size: 16px
-                            line-height: 23px
-                    .rating-container
-                        width: fit-content
-                        margin: 25px 30px
-                        
-            .review-text
-                width: 440px
-                margin: 20px 0px 0px 120px
-                color: $dark-gray
+                        flex-direction: row
+                        .user-info
+                            display: flex
+                            flex-direction: column
+                            color: $dark-gray
+                            margin: 15px 10px
+                            .username
+                                font-size: 20px
+                                line-height: 25px
+                            .user-occupation
+                                font-size: 16px
+                                line-height: 23px
+                        .rating-container
+                            width: fit-content
+                            margin: 25px 30px
+                .review-text
+                    width: 440px
+                    margin: 20px 0px 0px 120px
+                    color: $dark-gray

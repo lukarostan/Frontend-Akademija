@@ -36,18 +36,18 @@ Standard Room - Hotel
     <div class="content-room">
         <img class="big-picture" src="/images/imagesliderroom.png" alt="">
         <div class="image-slider-container">
-            <img class="arrowleft" src="/images/arrowleft.png" alt="">
+            <div class="nav-arrow left-arrow"></div>
             <div class="image-slider">
                 <img src="/images/imageslider1.png" alt="">
                 <img src="/images/imageslider1.png" alt="">
                 <img src="/images/imageslider1.png" alt="">
                 <img src="/images/imageslider1.png" alt="">
             </div>
-            <img class="arrowright" src="/images/arrowleft.png" alt="">
+            <div class="nav-arrow right-arrow"></div>
         </div>
         <div class="room-info-container arial">
             <div class="basic-info">
-                <h2 class="playfair bold">{{products[0].title}}</h2>
+                <h2 class="playfair bold">Standard Room</h2>
                 <div class="capacity">
                     <img src="/images/avatar.png" alt="">
                     <span>{{ products[0].max_adults }} Adults</span>
@@ -84,17 +84,28 @@ Standard Room - Hotel
             </div>
             <div class="book">
                 <h3 class="bold">Start booking</h2>
-                <span> 90.00$</span>
-                
+                <span class="book-price bold"> 90.00$</span>
                 <label for="dates">Dates</label>
                 <div class="dates">
-                    <input type="date" name="Dates" text="From">
-                    <input type="date" placeholder="To Date">
+                    <div class="input-box from-date-container">
+                        <img src="/images/calendar.png" alt="">
+                        <input type="text" name="fromdate" placeholder="From Date" text="From">
+                    </div>
+                    <div class="input-box to-date-container">
+                        <img src="/images/calendar.png" alt="">
+                        <input type="text" name="todate" placeholder="To Date" text="From">
+                    </div>
                 </div>
-                
+                <label for="guests">Guests</label>
                 <div class="guests">
-                    <input type="number" placeholder= "Adults">
-                    <input type="number" placeholder= "Children">
+                    <div class="adults-container">
+                        <img src="/images/avatar.png" alt="">
+                        <input type="number" name="adults" min="0" placeholder="Adults" text="From">
+                    </div>
+                    <div class="children-container">
+                        <img src="/images/baby.png" alt="">
+                        <input type="number" name="children" min="0" placeholder="Children" text="From">
+                    </div>
                 </div>
                 
                 <button class="button">CHECK AVAILABILITY</button>
@@ -105,14 +116,14 @@ Standard Room - Hotel
                     <div class="suggestion-item">
                         <img src="/images/suggestion1.png" alt="">
                         <h4 class="bold">Nature Room</h4>
-                        <a href=""> Book now   ></a>
-                        <span>$150.00</span>
+                        <a class="bold" href=""> Book now   ></a>
+                        <span class="bold">$150.00</span>
                     </div>
                     <div class="suggestion-item">
                         <img src="/images/suggestion1.png" alt="">
                         <h4 class="bold">Nature Room</h4>
-                        <a href=""> Book now   ></a>
-                        <span>$150.00</span>
+                        <a class="bold" href=""> Book now   ></a>
+                        <span class="bold">$150.00</span>
                     </div>
                 </div>
             </div>
@@ -157,7 +168,7 @@ Standard Room - Hotel
                         <input id="email" type="text" placeholder="Your email">
                     </div>
                     <label for="comment">Comment</label>
-                    <input id="comment" type="text" placeholder="Your comment">
+                    <textarea id="comment" name="comment" placeholder="Your comment" cols="150" rows="10"></textarea>
                     <input class="checkbox" type="checkbox" > <span>Save my name and email in this browser for the next time I comment.</span>
                 </form>
                 <button class="button">COMMENT</button>
@@ -168,38 +179,41 @@ Standard Room - Hotel
 
 {% block footer %}
     <div class="footer">
-        <div class="footer-title">
-            <img class="footer-title-logo" src="/images/Hotel.png" alt="">
-            <p class="arial">Every day is a new day for relaxation.</p>
-            <span class="arial bold">Follow us <img src="/images/fb.png" alt=""> <img src="/images/ig.png" alt=""> </span>
+        <div class="footer-content">
+            <div class="footer-title">
+                <img class="footer-title-logo" src="/images/Hotel.png" alt="">
+                <p>Every day is a new day for relaxation.</p>
+                <span class="bold">Follow us <img src="/images/fb.png" alt=""> <img src="/images/ig.png" alt=""> </span>
+            </div>
+            <div class="footer-address">
+                <h2 class="bold">Address</h2>
+                <span>London</span>
+                <span class="bold">Main street 1 London, CA 70413<br>Open: 9:30AM 5:30PM</span>
+                <span>New York</span>
+                <span class="bold">Great street Broadway, NT 10013<br>Open: 8:30AM 4:30PM</span>
+            </div>
+            <div class="footer-contact ">
+                <h2 class="bold">Contact us</h2>
+                <a class="bold" href="teL:+44 (800) 456-78-91">+44 (800) 456-78-91</a>
+                <a class="bold" href="mailto:hotel.london@mail.com">hotel.london@mail.com</a>
+                <a class="bold" href="tel:+1 (810) 456-78-91">+1 (810) 456-78-91</a>
+                <a class="bold" href="mailto:hotel.ny@mail.com">hotel.ny@mail.com</a>
+            </div>
+            <footer class="footer-newsletter">
+                <h2 class="bold">Stay in touch</h2>
+                <input type="text" placeholder="Your e-mail">
+                <button class="bold">SUBSCRIBE</button>
         </div>
-        <div class="footer-address">
-            <h2 class="arial bold">Address</h2>
-            <span class="arial">London</span>
-            <span class="arial bold">Main street 1 London, CA 70413<br>Open: 9:30AM 5:30PM</span>
-            <span class="arial">New York</span>
-            <span class="arial bold">Great street Broadway, NT 10013<br>Open: 8:30AM 4:30PM</span>
-        </div>
-        <div class="footer-contact ">
-            <h2 class="bold">Contact us</h2>
-            <a class="arial bold" href="teL:+44 (800) 456-78-91">+44 (800) 456-78-91</a>
-            <a class="arial bold" href="mailto:hotel.london@mail.com">hotel.london@mail.com</a>
-            <a class="arial bold" href="tel:+1 (810) 456-78-91">+1 (810) 456-78-91</a>
-            <a class="arial bold" href="mailto:hotel.ny@mail.com">hotel.ny@mail.com</a>
-        </div>
-        <footer class="footer-newsletter">
-            <h2 class="bold">Stay in touch</h2>
-            <input type="text" placeholder="Your e-mail">
-            <button class="arial bold">SUBSCRIBE</button>
-        </footer>
-        
     </div>   
-    <div class="footer-bottom arial">
-        <span >@2020, Frontend akademija</span>
-        <div class="footer__bottom-container">
-            <a class="arial bold" href="">Privacy Policy</a>
-            <a class="arial bold" href="">Site map</a>
-            <span class="arial">All Rights Reserved</span>
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <span class="footer-bottom-title">@2020, Frontend akademija</span>
+            <div class="footer__bottom-links">
+                <a class="bold" href="">Privacy Policy</a>
+                <a class="bold" href="">Site map</a>
+                <span>All Rights Reserved</span>
+            </div>
         </div>
     </div> 
 {% endblock %}
+

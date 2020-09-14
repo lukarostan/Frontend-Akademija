@@ -68,18 +68,75 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
+//Hero Slider
 
+var heroSliderCounter = 1;
+var heroSliderItem = $(".hero-slider__item");
+var heroSliderSize = $(".hero-slider__item").outerWidth(true);
 
-var reviewSliderN = 1;
-$(document).ready(function reviewSlider(params) {
-    $(".reviews-left-button").on("mousedown", function () {
-        reviewSliderN -= 1;
-        console.log(reviewSliderN);
+$(".hero-left-button").on("click", function () {
+    $(".hero-slider__item").css("transform", "translateX(" + -heroSliderSize * heroSliderCounter + "px)");
+    heroSliderCounter++;
+    if (heroSliderCounter > heroSliderItem.length - 1) {
+        heroSliderCounter = 0;
+    }
+});
+
+//News Slider
+
+var newsSliderCounter = 1;
+var newsSliderItem = $(".news-item");
+var newsSliderSize = $(".news-item").outerWidth(true);
+
+$(".news-left-button").on("mousedown", function () {
+    if (newsSliderCounter < 1) {
+        newsSliderCounter = 1;
+    }
+    $(".news-item").css("transform", "translateX(" + -newsSliderSize * newsSliderCounter + "px)");
+    newsSliderCounter--;
+    console.log(newsSliderCounter);
+});
+$(".news-right-button").on("mousedown", function () {
+    if (newsSliderCounter > newsSliderItem.length - 2) {
+        newsSliderCounter = newsSliderItem.length - 2;
+    }
+    $(".news-item").css("transform", "translateX(" + -newsSliderSize * newsSliderCounter + "px)");
+    newsSliderCounter++;
+    console.log(newsSliderCounter);
+});
+
+//Reviews Slider
+var reviewsSliderCounter = 1;
+var reviewsSliderItem = $(".reviews-item");
+var reviewsSliderSize = $(".reviews-item").outerWidth(true);
+
+$(".reviews-left-button").on("mousedown", function () {
+    if (reviewsSliderCounter < 1) {
+        reviewsSliderCounter = 1;
+    }
+    $(".reviews-item").css("transform", "translateX(" + -reviewsSliderSize * newsSliderCounter + "px)");
+    reviewsSliderCounter--;
+    console.log(reviewsSliderCounter);
+});
+$(".reviews-right-button").on("mousedown", function () {
+    if (reviewsSliderCounter > reviewsSliderItem.length - 1) {
+        reviewsSliderCounter = reviewsSliderItem.length - 1;
+    }
+    $(".reviews-item").css("transform", "translateX(" + reviewsSliderSize * newsSliderCounter + "px)");
+    reviewsSliderCounter++;
+    console.log(reviewsSliderCounter);
+});
+
+//Date picker
+$(function () {
+    $(".from-date-container input").datepicker({ dateFormat: "yy-mm-dd",
+        firstDay: 1,
+        minDate: new Date(2020, 11, 9),
+        maxDate: new Date(2020, 20, 9)
     });
-
-    $(".reviews-right-button").on("mousedown", function () {
-        reviewSliderN += 1;
-        console.log(reviewSliderN);
+    $(".to-date-container input").datepicker({
+        dateFormat: "yy-mm-dd",
+        firstDay: 1
     });
 });
 

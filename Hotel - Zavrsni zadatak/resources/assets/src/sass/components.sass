@@ -14,3 +14,44 @@
         border-left: 4px solid $dark-gray
         border-bottom: 4px solid $dark-gray
         transform: rotate(45deg)
+        transition: border-color 0.3s
+.ui-widget
+        background-color: #f0ece7
+        
+        border-radius: 8px
+        border: 2px solid $gold
+.ui-widget-content
+        font-family: Arial, Helvetica, sans-serif
+        padding: 10px
+.ui-datepicker-calendar
+        width: 220px
+        
+.ui-datepicker-calendar >*
+        border: 1px solid $gold
+.ui-datepicker-header
+        display: flex
+        flex-direction: row
+.ui-datepicker-prev ,.ui-datepicker-next
+        border: 1px solid $dark-gray
+        border-radius: 4px
+        padding: 1px 5px
+        content: "sS"
+        
+.ui-datepicker-next
+        order: 3
+        position: absolute
+        right: 10px
+.ui-datepicker-title
+        color: $gold
+        margin: 0px 4px
+        align-self: center
+        font-weight: bold
+        
+
+.ui-datepicker-current-day
+        font-weight: bold
+        border: 1px solid $gold
+        background-color: white
+        
+.ui-datepicker-unselectable
+        color: lightslategray
