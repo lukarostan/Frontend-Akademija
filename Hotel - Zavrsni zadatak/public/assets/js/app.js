@@ -68,12 +68,16 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
+$(document).ready(function () {
+    $(".reviews-slider").css("width", 2 * reviewsSliderSize);
+    $(".news-slider").css("width", 2 * newsSliderSize);
+});
+
 //Hero Slider
 
 var heroSliderCounter = 1;
 var heroSliderItem = $(".hero-slider__item");
 var heroSliderSize = $(".hero-slider__item").outerWidth(true);
-
 $(".hero-left-button").on("click", function () {
     $(".hero-slider__item").css("transform", "translateX(" + -heroSliderSize * heroSliderCounter + "px)");
     heroSliderCounter++;
@@ -84,50 +88,78 @@ $(".hero-left-button").on("click", function () {
 
 //News Slider
 
-var newsSliderCounter = 1;
+var newsLeftCounter = 1;
+var newsRightCounter = 1;
 var newsSliderItem = $(".news-item");
 var newsSliderSize = $(".news-item").outerWidth(true);
-
 $(".news-left-button").on("mousedown", function () {
-    if (newsSliderCounter < 1) {
-        newsSliderCounter = 1;
+    newsLeftCounter++;
+    if (newsLeftCounter >= newsSliderItem.length) {
+        newsLeftCounter = 1;
     }
-    $(".news-item").css("transform", "translateX(" + -newsSliderSize * newsSliderCounter + "px)");
-    newsSliderCounter--;
-    console.log(newsSliderCounter);
+    if (newsRightCounter <= 1) {
+        newsLeftCounter = 1;
+    }
+    $(".news-item").css("transform", "translateX(" + -newsSliderSize * (newsRightCounter - newsLeftCounter) + "px)");
+    console.log("left" + newsLeftCounter);
+    console.log(newsSliderSize * newsLeftCounter);
 });
 $(".news-right-button").on("mousedown", function () {
-    if (newsSliderCounter > newsSliderItem.length - 2) {
-        newsSliderCounter = newsSliderItem.length - 2;
+    newsRightCounter++;
+    if (newsRightCounter >= newsSliderItem.length) {
+        newsRightCounter = 1;
     }
-    $(".news-item").css("transform", "translateX(" + -newsSliderSize * newsSliderCounter + "px)");
-    newsSliderCounter++;
-    console.log(newsSliderCounter);
+    $(".news-item").css("transform", "translateX(" + newsSliderSize * (newsLeftCounter - newsRightCounter) + "px)");
 });
 
 //Reviews Slider
-var reviewsSliderCounter = 1;
-var reviewsSliderItem = $(".reviews-item");
-var reviewsSliderSize = $(".reviews-item").outerWidth(true);
 
+$(".reviews-slider").css("width", 2 * reviewsSliderSize);
+var reviewsLeftCounter = 1;
+var reviewsRightCounter = 1;
+var reviewsSliderItem = $(".news-item");
+var reviewsSliderSize = $(".news-item").outerWidth(true);
 $(".reviews-left-button").on("mousedown", function () {
-    if (reviewsSliderCounter < 1) {
-        reviewsSliderCounter = 1;
+    reviewsLeftCounter++;
+    if (reviewsLeftCounter >= reviewsSliderItem.length) {
+        reviewsLeftCounter = 1;
     }
-    $(".reviews-item").css("transform", "translateX(" + -reviewsSliderSize * newsSliderCounter + "px)");
-    reviewsSliderCounter--;
-    console.log(reviewsSliderCounter);
+    if (reviewsRightCounter <= 1) {
+        reviewsLeftCounter = 1;
+    }
+    $(".reviews-item").css("transform", "translateX(" + -reviewsSliderSize * (reviewsRightCounter - reviewsLeftCounter) + "px)");
 });
 $(".reviews-right-button").on("mousedown", function () {
-    if (reviewsSliderCounter > reviewsSliderItem.length - 1) {
-        reviewsSliderCounter = reviewsSliderItem.length - 1;
+    reviewsRightCounter++;
+    if (reviewsRightCounter >= reviewsSliderItem.length) {
+        reviewsRightCounter = 1;
     }
-    $(".reviews-item").css("transform", "translateX(" + reviewsSliderSize * newsSliderCounter + "px)");
-    reviewsSliderCounter++;
-    console.log(reviewsSliderCounter);
+    $(".reviews-item").css("transform", "translateX(" + reviewsSliderSize * (reviewsLeftCounter - reviewsRightCounter) + "px)");
 });
 
-//Date picker
+//Image Slider
+var imageSliderItem = $(".image-slider img");
+var imageSliderCounter = 0;
+$(imageSliderItem[imageSliderCounter]).css("outline", "3px solid #9B6333");
+
+$(".image-left-button").on("mousedown", function () {
+    if (imageSliderCounter > 0) {
+        imageSliderCounter--;
+    }
+});
+$(".image-right-button").on("mousedown", function () {
+    if (imageSliderCounter < imageSliderItem.length - 1) {
+        imageSliderCounter++;
+    }
+});
+
+$(".image-slider-container .nav-arrow").on("mousedown", function () {
+    $(imageSliderItem).css("outline", "none");
+    $(imageSliderItem[imageSliderCounter]).css("outline", "3px solid #9B6333");
+    $(".big-picture").attr('src', $(imageSliderItem[imageSliderCounter]).attr('src'));
+});
+
+//Datepicker
 $(function () {
     $(".from-date-container input").datepicker({ dateFormat: "yy-mm-dd",
         firstDay: 1,

@@ -4,6 +4,7 @@
     .big-picture
         display: block
         margin: 0px auto
+        min-width: 65%
         
     .image-slider-container
         margin: auto
@@ -16,15 +17,15 @@
         .nav-arrow:hover
             border-color: $gold
             cursor: pointer
-        .right-arrow
+        .image-right-button
             transform: rotate(225deg)
         .image-slider
             width: fit-content
             margin: 30px auto
             align-self: center
-            
             img
                 transition: outline 0.1s
+                max-width: 25%
             img:hover
                 outline: 3px solid $gold
     .room-info-container

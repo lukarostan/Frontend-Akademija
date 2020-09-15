@@ -590,7 +590,9 @@ button {
 }
 
 .content .news-container .news-slider-container {
-  width: 70%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -626,7 +628,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   height: 95%;
   -ms-flex-item-align: center;
@@ -805,7 +807,10 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px auto;
 }
 
 .content .reviews-container .reviews-slider-container .reviews-right-button {
@@ -896,6 +901,7 @@ button {
 .content-room .big-picture {
   display: block;
   margin: 0px auto;
+  min-width: 65%;
 }
 
 .content-room .image-slider-container {
@@ -920,7 +926,7 @@ button {
   cursor: pointer;
 }
 
-.content-room .image-slider-container .right-arrow {
+.content-room .image-slider-container .image-right-button {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
 }
@@ -937,6 +943,7 @@ button {
 .content-room .image-slider-container .image-slider img {
   -webkit-transition: outline 0.1s;
   transition: outline 0.1s;
+  max-width: 25%;
 }
 
 .content-room .image-slider-container .image-slider img:hover {
